@@ -7,7 +7,16 @@
 <meta name="description" content="QUREXION holt deine Trades automatisch von der Börse, zeigt dir Risiko und Marktlage live und findet, wo du Geld verdienst und wo du es verlierst. Für Windows. Deine Daten bleiben auf deinem PC.">
 <meta property="og:title" content="QUREXION – Krypto-Trading-Journal">
 <meta property="og:description" content="Automatisches Trading-Journal für Krypto-Trader: Auto-Sync, Nachbereitung, Berichte, Warnzentrale, Steuer-Export. Lokal auf deinem PC.">
-<meta property="og:image" content="assets/shot-overview.jpg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://qurexion.com/">
+<meta property="og:image" content="https://qurexion.com/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="QUREXION – Krypto-Trading-Journal">
+<meta name="twitter:description" content="Auto-Sync, Nachbereitung, Berichte, Warnzentrale. Lokal auf deinem PC.">
+<meta name="twitter:image" content="https://qurexion.com/assets/og.jpg">
+<link rel="canonical" href="https://qurexion.com/">
 <link rel="icon" href="assets/logo-mark.png">
 <style>
 :root{--bg:#020408;--surface:#0b0f1a;--surface2:#0f1424;--line:rgba(255,255,255,.07);--text:#f1f5f9;--muted:#94a3b8;--dim:#64748b;--violet:#7f0df2;--violet2:#8b5cf6;--violet3:#c4b5fd;--green:#10b981;--red:#f43f5e;--r:24px}
@@ -117,6 +126,9 @@ summary::-webkit-details-marker{display:none}
 summary:after{content:"+";color:var(--violet3);font-size:22px;line-height:1}
 details[open] summary:after{content:"–"}
 details p{color:var(--muted);margin-top:12px}
+.ol{color:#cbd5e1;margin:12px 0 0 20px;display:grid;gap:6px}
+.hint{font-size:13px!important;margin-top:12px!important;padding:10px 12px;border-radius:12px;background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.2);color:#fcd34d!important}
+.hint a{text-decoration:underline}
 /* Final CTA */
 .final{border-radius:32px;padding:70px 40px;text-align:center;background:radial-gradient(ellipse at center,rgba(127,13,242,.45),transparent 70%),var(--surface);border:1px solid rgba(139,92,246,.3)}
 .final h2{max-width:760px;margin:0 auto}
@@ -158,7 +170,7 @@ footer a:hover{color:#fff}
     </div>
     <div class="nav-cta">
       <a class="btn btn-ghost" href="#trailer">Trailer</a>
-      <a class="btn btn-primary" href="https://github.com/QurexionTracker/Qurexion/releases/latest" data-download>Download</a>
+      <a class="btn btn-primary" href="https://github.com/QurexionTracker/Qurexion/releases/latest/download/QUREXION-Setup.exe" data-download>Download</a>
     </div>
   </div>
 </nav>
@@ -169,7 +181,7 @@ footer a:hover{color:#fff}
     <h1>Das Krypto-Trading-Journal, <span class="grad">das mitdenkt.</span></h1>
     <p class="lead">QUREXION holt deine Trades automatisch von der Börse, zeigt dir Risiko und Marktlage live – und findet heraus, wo du Geld verdienst und wo du es verlierst.</p>
     <div class="ctas">
-      <a class="btn btn-primary" href="https://github.com/QurexionTracker/Qurexion/releases/latest" data-download>
+      <a class="btn btn-primary" href="https://github.com/QurexionTracker/Qurexion/releases/latest/download/QUREXION-Setup.exe" data-download>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 21h16"/></svg>Kostenlos für Windows laden</a>
       <a class="btn btn-ghost" href="#trailer"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>Trailer ansehen</a>
     </div>
@@ -183,11 +195,11 @@ footer a:hover{color:#fff}
     <span class="eyebrow">8 Werkzeuge · eine App</span>
     <div class="chips">
       <a class="chip" href="#f-sync">Börsen-Sync</a><a class="chip" href="#f-review">Nachbereitung</a><a class="chip" href="#f-reports">Berichte</a><a class="chip" href="#f-warn">Warnzentrale</a>
-      <a class="chip" href="#ki">KI-Coach</a><a class="chip" href="#f-tax">Steuer-Export</a><a class="chip" href="#f-reports">Was-wäre-wenn</a><a class="chip" href="#f-review">Wochenrückblick</a>
+      <a class="chip" href="#ki">KI-Coach</a><a class="chip" href="#f-tax">Steuer-Export</a><a class="chip" href="#f-reports">Szenario-Simulator</a><a class="chip" href="#f-review">Wochenrückblick</a>
     </div>
     <div class="stats">
       <div class="stat reveal"><b>6</b><span>Börsen automatisch verbunden</span></div>
-      <div class="stat reveal"><b>8</b><span>Berichte – von Muster bis Risiko</span></div>
+      <div class="stat reveal"><b>9</b><span>Berichte – von Kennzahlen bis Risiko</span></div>
       <div class="stat reveal"><b>5</b><span>Sprachen: DE, EN, FR, ES, IT</span></div>
       <div class="stat reveal"><b>100&nbsp;%</b><span>lokal – keine Cloud für deine Trades</span></div>
     </div>
@@ -219,16 +231,16 @@ footer a:hover{color:#fff}
 
     <div class="feature" id="f-reports">
       <div class="txt reveal"><span class="eyebrow">Berichte</span><h3>Sieh, was dich wirklich Geld kostet.</h3>
-        <p>Muster nach Wochentag, Uhrzeit, Coin und Haltedauer. Dein Verhalten nach Verlusten. Und was passiert wäre, wenn du deine Regeln eingehalten hättest.</p>
-        <ul class="checks"><li>8 Berichte: Überblick, Muster, Verteilung, Risiko, Verhalten, Setups …</li><li>Was-wäre-wenn: Szenarien mit deinen echten Trades durchrechnen</li><li>Teilbare Karten deiner besten Trades – Beträge auf Wunsch ausgeblendet</li></ul></div>
-      <div class="media reveal"><div class="frame"><div class="bar"><i></i><i></i><i></i></div><img src="assets/shot-whatif.jpg" alt="Was-wäre-wenn-Bericht mit Szenarien"></div></div>
+        <p>Ergebnisse nach Wochentag, Uhrzeit, Coin und Hebel. Disziplin gegen Emotion – in Dollar. Und was passiert wäre, wenn du deine Verluste früher begrenzt hättest.</p>
+        <ul class="checks"><li>9 Berichte: Trade-Verlauf, Kennzahlen, Risiko, Emotionen, Playbook, Marktlage …</li><li>Szenario-Simulator: deine echten Trades mit halbierten Verlusten durchgerechnet</li><li>Teilbare Karten deiner besten Trades – Beträge auf Wunsch ausgeblendet</li></ul></div>
+      <div class="media reveal"><div class="frame"><div class="bar"><i></i><i></i><i></i></div><img src="assets/shot-reports.jpg" alt="Bericht Emotionen: Disziplin gegen Emotion in Dollar"></div></div>
     </div>
 
     <div class="feature rev" id="f-warn">
       <div class="txt reveal"><span class="eyebrow">Warnzentrale</span><h3>Gewarnt, bevor es teuer wird.</h3>
         <p>Wenn du in einem Trade bist und etwas Wichtiges passiert, meldet sich QUREXION – als Pop-up, Windows-Nachricht und Ton.</p>
         <ul class="checks"><li>US-Makro-Termine (Fed, CPI, Arbeitsmarkt) mit Vorlauf</li><li>Schnelle Kursbewegungen, Liquidationswellen, extremes Funding</li><li>Deine eigenen Risiko-Regeln: Max. Trades, Revenge-Pause, Stop-Loss-Pflicht</li></ul></div>
-      <div class="media reveal"><div class="frame"><div class="bar"><i></i><i></i><i></i></div><img src="assets/shot-behavior.jpg" alt="Auswertung des Verhaltens nach Gefühl und Plan"></div></div>
+      <div class="media reveal"><div class="frame"><div class="bar"><i></i><i></i><i></i></div><img src="assets/shot-warn.jpg" alt="Warnzentrale mit aktuellen Warnungen zu offenen Trades"></div></div>
     </div>
   </div>
 </section>
@@ -261,7 +273,7 @@ footer a:hover{color:#fff}
   <div class="wrap">
     <div class="center"><span class="eyebrow">In 3 Minuten startklar</span><h2>So einfach geht's.</h2></div>
     <div class="steps">
-      <div class="step reveal"><div class="in"><span class="num">SCHRITT 1</span><h4>Installieren</h4><p>Setup herunterladen und starten. Der Assistent führt dich durch Sprache und Einrichtung.</p></div></div>
+      <div class="step reveal"><div class="in"><span class="num">SCHRITT 1</span><h4>Installieren</h4><p>Setup herunterladen und starten. Der Assistent führt dich durch Sprache und Einrichtung.</p><p class="hint">Zeigt Windows „Der Computer wurde durch Windows geschützt“? Klicke auf <b>Weitere Informationen</b> und dann auf <b>Trotzdem ausführen</b>. <a href="#smartscreen">Warum?</a></p></div></div>
       <div class="step reveal"><div class="in"><span class="num">SCHRITT 2</span><h4>Börse verbinden</h4><p>Lese-Schlüssel deiner Börse eintragen – mit Schritt-für-Schritt-Anleitung im Assistenten.</p></div></div>
       <div class="step reveal"><div class="in"><span class="num">SCHRITT 3</span><h4>Erkenntnisse bekommen</h4><p>QUREXION lädt deine Trades und zeigt dir sofort deine stärksten und schwächsten Muster.</p></div></div>
     </div>
@@ -283,8 +295,9 @@ footer a:hover{color:#fff}
       <details><summary>Welche Börsen werden unterstützt?</summary><p>Bitget, Bitunix, Binance, Bybit, OKX und Hyperliquid per API. Andere Börsen kannst du per CSV-Import anbinden.</p></details>
       <details><summary>Kann QUREXION in meinem Namen handeln?</summary><p>Nein. Du verbindest deine Börse mit einem Lese-Schlüssel. Damit kann QUREXION nur Trades und Positionen lesen – keine Orders senden und nichts auszahlen.</p></details>
       <details><summary>Wo werden meine Daten gespeichert?</summary><p>Auf deinem PC. Deine Trades, Notizen und Schlüssel werden nicht auf fremde Server hochgeladen. Für Kurse und Marktdaten ruft QUREXION öffentliche Börsen-Schnittstellen ab.</p></details>
+      <details id="smartscreen"><summary>Windows warnt beim Installieren – ist das normal?</summary><p>Ja. Windows SmartScreen warnt bei neuen Programmen, die noch nicht oft heruntergeladen wurden oder kein teures Herausgeber-Zertifikat haben. So startest du das Setup trotzdem:</p><ol class="ol"><li>Im blauen Fenster „Der Computer wurde durch Windows geschützt“ auf <b>Weitere Informationen</b> klicken.</li><li>Unten auf <b>Trotzdem ausführen</b> klicken.</li><li>Das Setup startet ganz normal.</li></ol><p>Lade QUREXION nur über diese Seite herunter. Updates kommen danach automatisch und sind digital signiert – QUREXION installiert nur offizielle Versionen.</p></details>
       <details><summary>Läuft QUREXION auf Mac oder dem Handy?</summary><p>Aktuell gibt es QUREXION für Windows. Weitere Plattformen sind geplant.</p></details>
-      <details><summary>Hilft QUREXION bei der Steuer?</summary><p>QUREXION exportiert alle geschlossenen Trades eines Jahres in USD und Euro (EZB-Referenzkurs am Schließtag) als Tabelle und Bericht. Das ist keine Steuerberatung – sprich die Auswertung mit deinem Steuerberater ab.</p></details>
+      <details id="f-tax"><summary>Hilft QUREXION bei der Steuer?</summary><p>QUREXION exportiert alle geschlossenen Trades eines Jahres in USD und Euro (EZB-Referenzkurs am Schließtag) als Tabelle und Bericht. Das ist keine Steuerberatung – sprich die Auswertung mit deinem Steuerberater ab.</p></details>
       <details><summary>Was kostet QUREXION?</summary><p>Während der Beta kannst du QUREXION kostenlos nutzen.</p></details>
     </div>
   </div>
@@ -293,7 +306,7 @@ footer a:hover{color:#fff}
 <section class="block" style="padding-top:10px">
   <div class="wrap">
     <div class="final reveal"><span class="eyebrow">Bereit?</span><h2 style="margin-top:12px">Hör auf zu raten. Fang an zu verstehen, wie du tradest.</h2>
-      <div class="ctas"><a class="btn btn-primary" href="https://github.com/QurexionTracker/Qurexion/releases/latest" data-download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 21h16"/></svg>Kostenlos für Windows laden</a></div>
+      <div class="ctas"><a class="btn btn-primary" href="https://github.com/QurexionTracker/Qurexion/releases/latest/download/QUREXION-Setup.exe" data-download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 21h16"/></svg>Kostenlos für Windows laden</a></div>
       <p class="note" style="color:var(--dim);margin-top:14px;font-size:13px">Windows 10 / 11 · 64 Bit</p></div>
   </div>
 </section>
