@@ -140,6 +140,14 @@ footer h5{color:#e2e8f0;font-size:14px;margin-bottom:12px}
 footer ul{list-style:none;display:grid;gap:8px}
 footer a:hover{color:#fff}
 .disc{margin-top:36px;padding-top:24px;border-top:1px solid var(--line);font-size:12px;line-height:1.6}
+.plans{display:grid;grid-template-columns:repeat(2,minmax(0,320px));gap:18px;justify-content:center;margin-top:44px}
+.plan{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:30px;text-align:left}
+.plan.best{border-color:rgba(139,92,246,.7);background:radial-gradient(ellipse at top,rgba(127,13,242,.22),transparent 70%),var(--surface);box-shadow:0 0 0 4px rgba(127,13,242,.12)}
+.plan .pn{font-weight:800;font-size:15px}.plan .pp{margin-top:14px;color:var(--muted)}.plan .pp b{font-size:40px;font-weight:900;color:#fff;letter-spacing:-.02em}
+.plan .ps{color:var(--dim);font-size:13px;margin-top:4px}
+.plan .badge{position:absolute;top:-12px;right:20px;background:var(--green);color:#02140d;font-size:12px;font-weight:900;padding:4px 12px;border-radius:999px}
+.plancheck{grid-template-columns:repeat(3,auto);justify-content:center;gap:12px 28px;margin-top:30px}
+@media (max-width:760px){.plans{grid-template-columns:1fr}.plancheck{grid-template-columns:1fr}}
 /* Responsive */
 @media (max-width:960px){
   .links{display:none}
@@ -166,26 +174,27 @@ footer a:hover{color:#fff}
       <a href="#boersen">Börsen</a>
       <a href="#sicherheit">Sicherheit</a>
       <a href="#so-gehts">So geht's</a>
+      <a href="#preise">Preise</a>
       <a href="#faq">FAQ</a>
     </div>
     <div class="nav-cta">
-      <a class="btn btn-ghost" href="#trailer">Trailer</a>
-      <a class="btn btn-primary" href="https://github.com/QurexionTracker/Qurexion/releases/latest/download/QUREXION-Setup.exe" data-download>Download</a>
+      <a class="btn btn-ghost" href="https://app.qurexion.com">Anmelden</a>
+      <a class="btn btn-primary" href="https://app.qurexion.com/#registrieren">Kostenlos testen</a>
     </div>
   </div>
 </nav>
 
 <header class="hero">
   <div class="wrap">
-    <span class="pill"><i></i>Jetzt in der Beta · für Windows</span>
+    <span class="pill"><i></i>14 Tage kostenlos testen · im Browser &amp; für Windows</span>
     <h1>Das Krypto-Trading-Journal, <span class="grad">das mitdenkt.</span></h1>
     <p class="lead">QUREXION holt deine Trades automatisch von der Börse, zeigt dir Risiko und Marktlage live – und findet heraus, wo du Geld verdienst und wo du es verlierst.</p>
     <div class="ctas">
-      <a class="btn btn-primary" href="https://github.com/QurexionTracker/Qurexion/releases/latest/download/QUREXION-Setup.exe" data-download>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 21h16"/></svg>Kostenlos für Windows laden</a>
-      <a class="btn btn-ghost" href="#trailer"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>Trailer ansehen</a>
+      <a class="btn btn-primary" href="https://app.qurexion.com/#registrieren">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>14 Tage kostenlos testen</a>
+      <a class="btn btn-ghost" href="https://github.com/QurexionTracker/Qurexion/releases/latest/download/QUREXION-Setup.exe" data-download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 21h16"/></svg>Windows-App laden</a>
     </div>
-    <p class="note">Keine Anmeldung · Deine Daten bleiben auf deinem PC · Automatische Updates</p>
+    <p class="note">Keine Zahlungsdaten nötig · Läuft im Browser oder als Windows-App · Ein Konto für beides</p>
     <div class="shot reveal"><div class="frame"><div class="bar"><i></i><i></i><i></i></div><img src="assets/shot-overview.jpg" alt="QUREXION Übersicht mit Kennzahlen, offenen Positionen und Risiko"></div></div>
   </div>
 </header>
@@ -201,7 +210,7 @@ footer a:hover{color:#fff}
       <div class="stat reveal"><b>6</b><span>Börsen automatisch verbunden</span></div>
       <div class="stat reveal"><b>9</b><span>Berichte – von Kennzahlen bis Risiko</span></div>
       <div class="stat reveal"><b>5</b><span>Sprachen: DE, EN, FR, ES, IT</span></div>
-      <div class="stat reveal"><b>100&nbsp;%</b><span>lokal – keine Cloud für deine Trades</span></div>
+      <div class="stat reveal"><b>2</b><span>Wege: Web-App &amp; Windows-App</span></div>
     </div>
     <div class="exch" id="boersen">
       <p>Funktioniert mit</p>
@@ -262,8 +271,8 @@ footer a:hover{color:#fff}
     <div class="privacy reveal">
       <div><span class="eyebrow">Sicherheit</span><div class="big" style="margin-top:12px"><span class="grad">100&nbsp;%</span><br>deins.</div></div>
       <div>
-        <p class="lead" style="color:#cbd5e1">Deine Trades, Notizen und API-Schlüssel bleiben auf deinem PC. Keine Cloud, kein Konto, kein Verkauf von Daten.</p>
-        <ul class="checks"><li>API-Schlüssel verschlüsselt gespeichert – nur Lese-Rechte empfohlen</li><li>QUREXION kann keine Orders senden und nichts auszahlen</li><li>Signierte Updates – nur offizielle Versionen werden installiert</li></ul>
+        <p class="lead" style="color:#cbd5e1">Du entscheidest: In der Windows-App bleiben Trades und Schlüssel auf deinem PC. In der Web-App liegen sie verschlüsselt in deinem Konto auf Servern in Frankfurt. Kein Verkauf von Daten.</p>
+        <ul class="checks"><li>API-Schlüssel verschlüsselt gespeichert – nur Lese-Rechte empfohlen</li><li>QUREXION kann keine Orders senden und nichts auszahlen</li><li>Signierte Updates – nur offizielle Versionen werden installiert</li><li>Die KI bekommt nur berechnete Kennzahlen – oder du nutzt die lokale KI, dann verlässt nichts den PC</li></ul>
       </div>
     </div>
   </div>
@@ -273,7 +282,7 @@ footer a:hover{color:#fff}
   <div class="wrap">
     <div class="center"><span class="eyebrow">In 3 Minuten startklar</span><h2>So einfach geht's.</h2></div>
     <div class="steps">
-      <div class="step reveal"><div class="in"><span class="num">SCHRITT 1</span><h4>Installieren</h4><p>Setup herunterladen und starten. Der Assistent führt dich durch Sprache und Einrichtung.</p><p class="hint">Zeigt Windows „Der Computer wurde durch Windows geschützt“? Klicke auf <b>Weitere Informationen</b> und dann auf <b>Trotzdem ausführen</b>. <a href="#smartscreen">Warum?</a></p></div></div>
+      <div class="step reveal"><div class="in"><span class="num">SCHRITT 1</span><h4>Konto & Installation</h4><p>Kostenloses Konto anlegen, Setup herunterladen und starten. Der Assistent führt dich durch Sprache und Einrichtung.</p><p class="hint">Zeigt Windows „Der Computer wurde durch Windows geschützt“? Klicke auf <b>Weitere Informationen</b> und dann auf <b>Trotzdem ausführen</b>. <a href="#smartscreen">Warum?</a></p></div></div>
       <div class="step reveal"><div class="in"><span class="num">SCHRITT 2</span><h4>Börse verbinden</h4><p>Lese-Schlüssel deiner Börse eintragen – mit Schritt-für-Schritt-Anleitung im Assistenten.</p></div></div>
       <div class="step reveal"><div class="in"><span class="num">SCHRITT 3</span><h4>Erkenntnisse bekommen</h4><p>QUREXION lädt deine Trades und zeigt dir sofort deine stärksten und schwächsten Muster.</p></div></div>
     </div>
@@ -287,6 +296,24 @@ footer a:hover{color:#fff}
   </div>
 </section>
 
+<section class="block" id="preise" style="padding-top:20px">
+  <div class="wrap center">
+    <span class="eyebrow">Preise</span>
+    <h2 style="margin-top:12px">Ein Abo. Alle Funktionen.</h2>
+    <p class="lead">14 Tage kostenlos testen – ohne Zahlungsdaten. Danach monatlich oder jährlich, jederzeit kündbar.</p>
+    <div class="plans">
+      <div class="plan reveal"><p class="pn">Monatlich</p><p class="pp"><b>14,99 €</b> / Monat</p><p class="ps">monatlich kündbar</p></div>
+      <div class="plan best reveal"><span class="badge">33 % sparen</span><p class="pn">Jährlich</p><p class="pp"><b>119 €</b> / Jahr</p><p class="ps">entspricht 9,92 € im Monat</p></div>
+    </div>
+    <ul class="checks plancheck">
+      <li>Automatischer Börsen-Sync (6 Börsen)</li><li>Nachbereitung &amp; Wochenrückblick</li><li>Alle 9 Berichte &amp; Szenario-Simulator</li>
+      <li>Warnzentrale &amp; Risiko-Regeln</li><li>KI-Coach &amp; Journal-Chat</li><li>Steuer-Export &amp; automatische Backups</li>
+    </ul>
+    <div class="ctas" style="display:flex;justify-content:center;margin-top:30px"><a class="btn btn-primary" href="https://app.qurexion.com/#registrieren">14 Tage kostenlos testen</a></div>
+    <p style="color:var(--dim);font-size:13px;margin-top:14px">Preise inkl. MwSt. · Bezahlung sicher über Stripe (Karte, Apple Pay, Google Pay)</p>
+  </div>
+</section>
+
 <section class="block" id="faq" style="padding-top:20px">
   <div class="wrap">
     <div class="center"><span class="eyebrow">FAQ</span><h2>Häufige Fragen</h2></div>
@@ -294,11 +321,13 @@ footer a:hover{color:#fff}
       <details><summary>Was ist ein Trading-Journal – und warum brauche ich eins?</summary><p>Ein Journal hält jeden Trade mit Ergebnis, Setup und Gedanken fest. Erst damit siehst du, welche Muster dir Geld bringen und welche dich Geld kosten. QUREXION erledigt das Eintragen für dich automatisch.</p></details>
       <details><summary>Welche Börsen werden unterstützt?</summary><p>Bitget, Bitunix, Binance, Bybit, OKX und Hyperliquid per API. Andere Börsen kannst du per CSV-Import anbinden.</p></details>
       <details><summary>Kann QUREXION in meinem Namen handeln?</summary><p>Nein. Du verbindest deine Börse mit einem Lese-Schlüssel. Damit kann QUREXION nur Trades und Positionen lesen – keine Orders senden und nichts auszahlen.</p></details>
-      <details><summary>Wo werden meine Daten gespeichert?</summary><p>Auf deinem PC. Deine Trades, Notizen und Schlüssel werden nicht auf fremde Server hochgeladen. Für Kurse und Marktdaten ruft QUREXION öffentliche Börsen-Schnittstellen ab.</p></details>
+      <details><summary>Wo werden meine Daten gespeichert?</summary><p>In der Windows-App auf deinem PC – optional mit Cloud-Sync in dein Konto. In der Web-App in deinem Konto (Supabase, Frankfurt); Börsen-Schlüssel werden dort verschlüsselt gespeichert und nur an die Börse weitergegeben. Für Kurse und Marktdaten ruft QUREXION öffentliche Börsen-Schnittstellen ab. Für Antworten des KI-Coachs schickt QUREXION nur die berechneten Kennzahlen zu deiner Frage an die QUREXION-KI – wer das nicht möchte, schaltet in den Einstellungen auf die lokale KI um.</p></details>
       <details id="smartscreen"><summary>Windows warnt beim Installieren – ist das normal?</summary><p>Ja. Windows SmartScreen warnt bei neuen Programmen, die noch nicht oft heruntergeladen wurden oder kein teures Herausgeber-Zertifikat haben. So startest du das Setup trotzdem:</p><ol class="ol"><li>Im blauen Fenster „Der Computer wurde durch Windows geschützt“ auf <b>Weitere Informationen</b> klicken.</li><li>Unten auf <b>Trotzdem ausführen</b> klicken.</li><li>Das Setup startet ganz normal.</li></ol><p>Lade QUREXION nur über diese Seite herunter. Updates kommen danach automatisch und sind digital signiert – QUREXION installiert nur offizielle Versionen.</p></details>
       <details><summary>Läuft QUREXION auf Mac oder dem Handy?</summary><p>Aktuell gibt es QUREXION für Windows. Weitere Plattformen sind geplant.</p></details>
       <details id="f-tax"><summary>Hilft QUREXION bei der Steuer?</summary><p>QUREXION exportiert alle geschlossenen Trades eines Jahres in USD und Euro (EZB-Referenzkurs am Schließtag) als Tabelle und Bericht. Das ist keine Steuerberatung – sprich die Auswertung mit deinem Steuerberater ab.</p></details>
-      <details><summary>Was kostet QUREXION?</summary><p>Während der Beta kannst du QUREXION kostenlos nutzen.</p></details>
+      <details><summary>Was kostet QUREXION?</summary><p>Du testest QUREXION 14 Tage kostenlos – ohne Zahlungsdaten. Danach kostet QUREXION Pro 14,99 € im Monat oder 119 € im Jahr (inkl. MwSt.). Das Abo ist jederzeit zum Ende des Zeitraums kündbar.</p></details>
+      <details><summary>Wofür brauche ich ein Konto?</summary><p>Mit deinem Konto meldest du dich in der Web-App und in der Windows-App an, und es prüft, ob deine Testphase oder dein Abo aktiv ist. Die Windows-App läuft ohne Internet bis zu 7 Tage weiter.</p></details>
+      <details><summary>Gibt es QUREXION auch im Browser?</summary><p>Ja – unter app.qurexion.com, mit allen Funktionen: Börsen-Sync, Nachbereitung, Berichte, Warnungen und KI-Coach. Mit Cloud-Sync siehst du in Browser und Windows-App dieselben Daten.</p></details>
     </div>
   </div>
 </section>
@@ -306,7 +335,7 @@ footer a:hover{color:#fff}
 <section class="block" style="padding-top:10px">
   <div class="wrap">
     <div class="final reveal"><span class="eyebrow">Bereit?</span><h2 style="margin-top:12px">Hör auf zu raten. Fang an zu verstehen, wie du tradest.</h2>
-      <div class="ctas"><a class="btn btn-primary" href="https://github.com/QurexionTracker/Qurexion/releases/latest/download/QUREXION-Setup.exe" data-download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 21h16"/></svg>Kostenlos für Windows laden</a></div>
+      <div class="ctas"><a class="btn btn-primary" href="https://app.qurexion.com/#registrieren">14 Tage kostenlos testen</a><a class="btn btn-ghost" href="https://github.com/QurexionTracker/Qurexion/releases/latest/download/QUREXION-Setup.exe" data-download>Für Windows laden</a></div>
       <p class="note" style="color:var(--dim);margin-top:14px;font-size:13px">Windows 10 / 11 · 64 Bit</p></div>
   </div>
 </section>
@@ -316,7 +345,7 @@ footer a:hover{color:#fff}
     <div class="fgrid">
       <div><a class="brand" href="#"><img src="assets/logo-mark.png" alt=""><span>QU<b>REXION</b></span></a><p style="margin-top:14px;max-width:360px">Das Krypto-Trading-Journal für Trader, die verstehen wollen, warum sie gewinnen – und warum nicht.</p></div>
       <div><h5>Produkt</h5><ul><li><a href="#funktionen">Funktionen</a></li><li><a href="#boersen">Börsen</a></li><li><a href="#sicherheit">Sicherheit</a></li><li><a href="https://github.com/QurexionTracker/Qurexion/releases" >Versionen</a></li></ul></div>
-      <div><h5>Rechtliches</h5><ul><li><a href="impressum.html">Impressum</a></li><li><a href="datenschutz.html">Datenschutz</a></li></ul></div>
+      <div><h5>Rechtliches</h5><ul><li><a href="impressum.html">Impressum</a></li><li><a href="datenschutz.html">Datenschutz</a></li><li><a href="agb.html">Nutzungsbedingungen</a></li></ul></div>
     </div>
     <p class="disc">Risikohinweis: Der Handel mit Kryptowerten und Derivaten mit Hebel ist mit erheblichen Risiken verbunden und kann zum vollständigen Verlust des eingesetzten Kapitals führen. QUREXION ist ein Werkzeug zur Auswertung deiner eigenen Trades und stellt keine Anlage-, Finanz- oder Steuerberatung dar. Vergangene Ergebnisse sind kein Hinweis auf zukünftige Ergebnisse.<br><br>© 2026 QUREXION</p>
   </div>
