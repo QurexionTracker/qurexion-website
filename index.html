@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>QUREXION – Das Krypto-Trading-Journal, das mitdenkt</title>
-<meta name="description" content="QUREXION holt deine Trades automatisch von der Börse, zeigt dir Risiko und Marktlage live und findet, wo du Geld verdienst und wo du es verlierst. Für Windows. Deine Daten bleiben auf deinem PC.">
+<meta name="description" content="QUREXION holt deine Trades automatisch von der Börse, zeigt dir Risiko und Marktlage live und findet, wo du Geld verdienst und wo du es verlierst. Im Browser und für Windows – 14 Tage kostenlos testen.">
 <meta property="og:title" content="QUREXION – Krypto-Trading-Journal">
-<meta property="og:description" content="Automatisches Trading-Journal für Krypto-Trader: Auto-Sync, Nachbereitung, Berichte, Warnzentrale, Steuer-Export. Lokal auf deinem PC.">
+<meta property="og:description" content="Automatisches Trading-Journal für Krypto-Trader: Auto-Sync, Nachbereitung, Berichte, Warnzentrale, KI-Coach. Im Browser und für Windows.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://qurexion.com/">
 <meta property="og:image" content="https://qurexion.com/assets/og.jpg">
@@ -14,9 +14,12 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="QUREXION – Krypto-Trading-Journal">
-<meta name="twitter:description" content="Auto-Sync, Nachbereitung, Berichte, Warnzentrale. Lokal auf deinem PC.">
+<meta name="twitter:description" content="Auto-Sync, Nachbereitung, Berichte, Warnzentrale, KI-Coach. Im Browser und für Windows.">
 <meta name="twitter:image" content="https://qurexion.com/assets/og.jpg">
 <link rel="canonical" href="https://qurexion.com/">
+<link rel="alternate" hreflang="de" href="https://qurexion.com/">
+<link rel="alternate" hreflang="en" href="https://qurexion.com/en/">
+<link rel="alternate" hreflang="x-default" href="https://qurexion.com/">
 <link rel="icon" href="assets/logo-mark.png">
 <style>
 :root{--bg:#020408;--surface:#0b0f1a;--surface2:#0f1424;--line:rgba(255,255,255,.07);--text:#f1f5f9;--muted:#94a3b8;--dim:#64748b;--violet:#7f0df2;--violet2:#8b5cf6;--violet3:#c4b5fd;--green:#10b981;--red:#f43f5e;--r:24px}
@@ -162,6 +165,7 @@ footer a:hover{color:#fff}
 @media (max-width:520px){ .nav-cta .btn-ghost{display:none} .stat b{font-size:30px} }
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
 .reveal.in{opacity:1;transform:none}
+.lang-sw{display:inline-flex;align-items:center;justify-content:center;height:38px;padding:0 12px;border-radius:12px;border:1px solid var(--line);color:var(--muted);font-weight:800;font-size:13px;letter-spacing:.06em;text-decoration:none}.lang-sw:hover{color:#fff;border-color:rgba(139,92,246,.5)}
 </style>
 </head>
 <body>
@@ -178,6 +182,7 @@ footer a:hover{color:#fff}
       <a href="#faq">FAQ</a>
     </div>
     <div class="nav-cta">
+      <a class="lang-sw" href="en/" hreflang="en" title="English">EN</a>
       <a class="btn btn-ghost" href="https://app.qurexion.com">Anmelden</a>
       <a class="btn btn-primary" href="https://app.qurexion.com/#registrieren">Kostenlos testen</a>
     </div>
@@ -323,7 +328,7 @@ footer a:hover{color:#fff}
       <details><summary>Kann QUREXION in meinem Namen handeln?</summary><p>Nein. Du verbindest deine Börse mit einem Lese-Schlüssel. Damit kann QUREXION nur Trades und Positionen lesen – keine Orders senden und nichts auszahlen.</p></details>
       <details><summary>Wo werden meine Daten gespeichert?</summary><p>In der Windows-App auf deinem PC – optional mit Cloud-Sync in dein Konto. In der Web-App in deinem Konto (Supabase, Frankfurt); Börsen-Schlüssel werden dort verschlüsselt gespeichert und nur an die Börse weitergegeben. Für Kurse und Marktdaten ruft QUREXION öffentliche Börsen-Schnittstellen ab. Für Antworten des KI-Coachs schickt QUREXION nur die berechneten Kennzahlen zu deiner Frage an die QUREXION-KI – wer das nicht möchte, schaltet in den Einstellungen auf die lokale KI um.</p></details>
       <details id="smartscreen"><summary>Windows warnt beim Installieren – ist das normal?</summary><p>Ja. Windows SmartScreen warnt bei neuen Programmen, die noch nicht oft heruntergeladen wurden oder kein teures Herausgeber-Zertifikat haben. So startest du das Setup trotzdem:</p><ol class="ol"><li>Im blauen Fenster „Der Computer wurde durch Windows geschützt“ auf <b>Weitere Informationen</b> klicken.</li><li>Unten auf <b>Trotzdem ausführen</b> klicken.</li><li>Das Setup startet ganz normal.</li></ol><p>Lade QUREXION nur über diese Seite herunter. Updates kommen danach automatisch und sind digital signiert – QUREXION installiert nur offizielle Versionen.</p></details>
-      <details><summary>Läuft QUREXION auf Mac oder dem Handy?</summary><p>Aktuell gibt es QUREXION für Windows. Weitere Plattformen sind geplant.</p></details>
+      <details><summary>Läuft QUREXION auf Mac oder dem Handy?</summary><p>Ja – über die Web-App unter app.qurexion.com läuft QUREXION in jedem modernen Browser, also auch auf Mac, Tablet und Handy. Auf dem Handy kannst du die Web-App zum Startbildschirm hinzufügen. Die Desktop-App gibt es für Windows.</p></details>
       <details id="f-tax"><summary>Hilft QUREXION bei der Steuer?</summary><p>QUREXION exportiert alle geschlossenen Trades eines Jahres in USD und Euro (EZB-Referenzkurs am Schließtag) als Tabelle und Bericht. Das ist keine Steuerberatung – sprich die Auswertung mit deinem Steuerberater ab.</p></details>
       <details><summary>Was kostet QUREXION?</summary><p>Du testest QUREXION 14 Tage kostenlos – ohne Zahlungsdaten. Danach kostet QUREXION Pro 14,99 € im Monat oder 119 € im Jahr (inkl. MwSt.). Das Abo ist jederzeit zum Ende des Zeitraums kündbar.</p></details>
       <details><summary>Wofür brauche ich ein Konto?</summary><p>Mit deinem Konto meldest du dich in der Web-App und in der Windows-App an, und es prüft, ob deine Testphase oder dein Abo aktiv ist. Die Windows-App läuft ohne Internet bis zu 7 Tage weiter.</p></details>
