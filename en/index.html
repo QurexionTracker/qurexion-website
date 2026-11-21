@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QUREXION – The crypto trading journal that thinks with you</title>
+<meta name="description" content="QUREXION pulls your trades from your exchange automatically, shows risk and market conditions live and finds where you make and lose money. In your browser and for Windows – free for 14 days.">
+<meta property="og:title" content="QUREXION – Crypto trading journal">
+<meta property="og:description" content="Automatic trading journal for crypto traders: auto sync, trade review, reports, alert center, AI coach. In your browser and for Windows.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://qurexion.com/en/">
+<meta property="og:image" content="https://qurexion.com/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="QUREXION – Crypto trading journal">
+<meta name="twitter:description" content="Auto sync, trade review, reports, alert center, AI coach. In your browser and for Windows.">
+<meta name="twitter:image" content="https://qurexion.com/assets/og.jpg">
+<link rel="canonical" href="https://qurexion.com/">
+<link rel="alternate" hreflang="de" href="https://qurexion.com/">
+<link rel="alternate" hreflang="en" href="https://qurexion.com/en/">
+<link rel="alternate" hreflang="x-default" href="https://qurexion.com/">
+<link rel="icon" href="../assets/logo-mark.png">
+<style>
+:root{--bg:#020408;--surface:#0b0f1a;--surface2:#0f1424;--line:rgba(255,255,255,.07);--text:#f1f5f9;--muted:#94a3b8;--dim:#64748b;--violet:#7f0df2;--violet2:#8b5cf6;--violet3:#c4b5fd;--green:#10b981;--red:#f43f5e;--r:24px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.eyebrow{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--violet3)}
+h1,h2,h3{letter-spacing:-.02em;line-height:1.1}
+h2{font-size:clamp(30px,4vw,46px);font-weight:900}
+.lead{color:var(--muted);font-size:18px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:14px;font-weight:800;font-size:15px;transition:.2s;border:1px solid transparent;cursor:pointer}
+.btn-primary{background:linear-gradient(135deg,#7f0df2,#8b5cf6);color:#fff;box-shadow:0 10px 40px -10px rgba(127,13,242,.7)}
+.btn-primary:hover{transform:translateY(-1px);box-shadow:0 14px 50px -10px rgba(127,13,242,.9)}
+.btn-ghost{background:rgba(255,255,255,.04);border-color:var(--line);color:var(--text)}
+.btn-ghost:hover{border-color:rgba(139,92,246,.5)}
+.btn svg{width:18px;height:18px}
+/* Nav */
+nav.top{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(2,4,8,.72);border-bottom:1px solid var(--line)}
+nav.top .wrap{display:flex;align-items:center;gap:28px;height:72px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:19px;letter-spacing:.04em}
+.brand img{width:34px;height:auto}
+.brand span b{color:var(--violet2)}
+.links{display:flex;gap:26px;font-size:14px;font-weight:600;color:var(--muted)}
+.links a:hover{color:#fff}
+.nav-cta{margin-left:auto;display:flex;gap:10px;align-items:center}
+.nav-cta .btn{padding:10px 16px;font-size:14px}
+/* Hero */
+.hero{position:relative;padding:90px 0 40px;text-align:center}
+.hero:before{content:"";position:absolute;inset:-200px 0 auto 0;height:900px;background:radial-gradient(ellipse 60% 50% at 50% 30%,rgba(127,13,242,.35),transparent 70%);pointer-events:none}
+.hero .pill{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;border:1px solid rgba(139,92,246,.35);background:rgba(139,92,246,.1);font-size:13px;font-weight:700;color:var(--violet3);position:relative}
+.hero .pill i{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green)}
+.hero h1{font-size:clamp(40px,6.4vw,76px);font-weight:900;margin:22px auto 0;max-width:980px;position:relative}
+.grad{background:linear-gradient(90deg,#c4b5fd,#8b5cf6 45%,#7f0df2);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.lead{max-width:720px;margin:22px auto 0;font-size:19px;position:relative}
+.hero .ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:34px;position:relative}
+.hero .note{margin-top:16px;font-size:13px;color:var(--dim);position:relative}
+.shot{position:relative;margin:60px auto 0;max-width:1120px}
+.shot:before{content:"";position:absolute;inset:8% 6% -6% 6%;background:radial-gradient(ellipse at center,rgba(127,13,242,.55),transparent 70%);filter:blur(50px);z-index:0}
+.frame{position:relative;z-index:1;border-radius:20px;padding:10px;background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.1);box-shadow:0 40px 120px -30px rgba(0,0,0,.9)}
+.frame .bar{display:flex;gap:6px;padding:4px 6px 10px}
+.frame .bar i{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.15)}
+.frame img{border-radius:12px;width:100%}
+/* Tools strip */
+.tools{padding:70px 0 20px;text-align:center}
+.chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:16px}
+.chip{padding:9px 16px;border-radius:999px;border:1px solid var(--line);background:var(--surface);font-size:14px;font-weight:700;color:#e2e8f0;transition:.2s}
+.chip:hover{border-color:rgba(139,92,246,.6);color:#fff}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:46px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:26px}
+.stat b{display:block;font-size:40px;font-weight:900;letter-spacing:-.02em}
+.stat span{color:var(--muted);font-size:14px}
+.exch{margin-top:46px}
+.exch p{color:var(--dim);font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.exch .row{display:flex;flex-wrap:wrap;gap:12px 40px;justify-content:center;margin-top:18px}
+.exch .row span{font-size:22px;font-weight:900;color:#cbd5e1;opacity:.75;letter-spacing:.02em}
+/* Feature blocks */
+section.block{padding:90px 0}
+.center{text-align:center}
+.center .lead{max-width:680px;margin:16px auto 0}
+.feature{display:grid;grid-template-columns:1fr 1.25fr;gap:60px;align-items:center;margin-top:90px}
+.feature.rev{grid-template-columns:1.25fr 1fr}
+.feature.rev .txt{order:2}
+.feature h3{font-size:clamp(26px,3vw,36px);font-weight:900;margin-top:12px}
+.feature p{color:var(--muted);margin-top:14px;font-size:17px}
+.checks{list-style:none;margin-top:22px;display:grid;gap:12px}
+.checks li{display:flex;gap:12px;align-items:flex-start;color:#e2e8f0;font-size:15px}
+.checks li:before{content:"";flex:0 0 22px;height:22px;border-radius:7px;background:rgba(16,185,129,.15) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2310b981' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/13px no-repeat;margin-top:1px}
+.more{display:inline-flex;gap:8px;margin-top:24px;color:var(--violet3);font-weight:800;font-size:15px}
+.more:hover{color:#fff}
+.media{position:relative}
+.media:before{content:"";position:absolute;inset:10%;background:radial-gradient(ellipse,rgba(127,13,242,.4),transparent 70%);filter:blur(40px)}
+.media .frame{transform:perspective(1600px) rotateY(0deg)}
+/* Cards */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:50px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:28px;transition:.25s}
+.card:hover{border-color:rgba(139,92,246,.45);transform:translateY(-2px)}
+.ico{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:rgba(139,92,246,.15);color:var(--violet3)}
+.ico svg{width:22px;height:22px}
+.card h4{font-size:18px;font-weight:800;margin-top:18px}
+.card p{color:var(--muted);font-size:15px;margin-top:8px}
+.tag{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--violet3);background:rgba(139,92,246,.12);border:1px solid rgba(139,92,246,.25);padding:4px 10px;border-radius:999px}
+.live{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:800;color:var(--green);float:right}
+.live:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green)}
+/* Privacy */
+.privacy{border-radius:32px;padding:56px;background:radial-gradient(ellipse at top left,rgba(127,13,242,.25),transparent 60%),var(--surface);border:1px solid rgba(139,92,246,.25);display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.privacy .big{font-size:clamp(54px,7vw,92px);font-weight:900;line-height:1}
+/* Steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:50px}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.step .num{font-size:13px;font-weight:900;color:var(--violet3);letter-spacing:.14em}
+.step .in{padding:26px}
+.step h4{font-size:20px;font-weight:900;margin-top:8px}
+.step p{color:var(--muted);font-size:15px;margin-top:8px}
+.step img{border-top:1px solid var(--line);aspect-ratio:16/10;object-fit:cover;object-position:top left}
+/* Video */
+.video{margin-top:46px;border-radius:24px;overflow:hidden;border:1px solid var(--line);box-shadow:0 40px 120px -40px rgba(127,13,242,.6)}
+.video video{width:100%;display:block;background:#000}
+/* FAQ */
+.faq{max-width:860px;margin:50px auto 0;display:grid;gap:12px}
+details{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:20px 24px}
+details[open]{border-color:rgba(139,92,246,.35)}
+summary{cursor:pointer;font-weight:800;font-size:17px;list-style:none;display:flex;justify-content:space-between;gap:20px}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";color:var(--violet3);font-size:22px;line-height:1}
+details[open] summary:after{content:"–"}
+details p{color:var(--muted);margin-top:12px}
+.ol{color:#cbd5e1;margin:12px 0 0 20px;display:grid;gap:6px}
+.hint{font-size:13px!important;margin-top:12px!important;padding:10px 12px;border-radius:12px;background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.2);color:#fcd34d!important}
+.hint a{text-decoration:underline}
+/* Final CTA */
+.final{border-radius:32px;padding:70px 40px;text-align:center;background:radial-gradient(ellipse at center,rgba(127,13,242,.45),transparent 70%),var(--surface);border:1px solid rgba(139,92,246,.3)}
+.final h2{max-width:760px;margin:0 auto}
+.final .ctas{display:flex;gap:12px;justify-content:center;margin-top:30px;flex-wrap:wrap}
+/* Footer */
+footer{border-top:1px solid var(--line);margin-top:90px;padding:50px 0 40px;color:var(--dim);font-size:14px}
+.fgrid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:40px}
+footer h5{color:#e2e8f0;font-size:14px;margin-bottom:12px}
+footer ul{list-style:none;display:grid;gap:8px}
+footer a:hover{color:#fff}
+.disc{margin-top:36px;padding-top:24px;border-top:1px solid var(--line);font-size:12px;line-height:1.6}
+.plans{display:grid;grid-template-columns:repeat(2,minmax(0,320px));gap:18px;justify-content:center;margin-top:44px}
+.plan{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:30px;text-align:left}
+.plan.best{border-color:rgba(139,92,246,.7);background:radial-gradient(ellipse at top,rgba(127,13,242,.22),transparent 70%),var(--surface);box-shadow:0 0 0 4px rgba(127,13,242,.12)}
+.plan .pn{font-weight:800;font-size:15px}.plan .pp{margin-top:14px;color:var(--muted)}.plan .pp b{font-size:40px;font-weight:900;color:#fff;letter-spacing:-.02em}
+.plan .ps{color:var(--dim);font-size:13px;margin-top:4px}
+.plan .badge{position:absolute;top:-12px;right:20px;background:var(--green);color:#02140d;font-size:12px;font-weight:900;padding:4px 12px;border-radius:999px}
+.plancheck{grid-template-columns:repeat(3,auto);justify-content:center;gap:12px 28px;margin-top:30px}
+@media (max-width:760px){.plans{grid-template-columns:1fr}.plancheck{grid-template-columns:1fr}}
+/* Responsive */
+@media (max-width:960px){
+  .links{display:none}
+  .feature,.feature.rev,.privacy{grid-template-columns:1fr;gap:30px}
+  .feature.rev .txt{order:0}
+  .cards,.steps{grid-template-columns:1fr}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .fgrid{grid-template-columns:1fr}
+  .privacy{padding:34px}
+  .hero{padding-top:60px}
+}
+@media (max-width:520px){ .nav-cta .btn-ghost{display:none} .stat b{font-size:30px} }
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+.lang-sw{display:inline-flex;align-items:center;justify-content:center;height:38px;padding:0 12px;border-radius:12px;border:1px solid var(--line);color:var(--muted);font-weight:800;font-size:13px;letter-spacing:.06em;text-decoration:none}.lang-sw:hover{color:#fff;border-color:rgba(139,92,246,.5)}
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <div class="wrap">
+    <a class="brand" href="#"><img src="../assets/logo-mark.png" alt=""><span>QU<b>REXION</b></span></a>
+    <div class="links">
+      <a href="#funktionen">Features</a>
+      <a href="#boersen">Exchanges</a>
+      <a href="#sicherheit">Security</a>
+      <a href="#so-gehts">How it works</a>
+      <a href="#preise">Pricing</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div class="nav-cta">
+      <a class="lang-sw" href="../" hreflang="de" title="Deutsch">DE</a>
+      <a class="btn btn-ghost" href="https://app.qurexion.com/?lang=en">Sign in</a>
+      <a class="btn btn-primary" href="https://app.qurexion.com/?lang=en#registrieren">Try for free</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="pill"><i></i>Free for 14 days · in your browser &amp; for Windows</span>
+    <h1>The crypto trading journal <span class="grad">that thinks with you.</span></h1>
+    <p class="lead">QUREXION pulls your trades from your exchange automatically, shows your risk and the market live – and finds out where you make money and where you lose it.</p>
+    <div class="ctas">
+      <a class="btn btn-primary" href="https://app.qurexion.com/?lang=en#registrieren">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>Try free for 14 days</a>
+      <a class="btn btn-ghost" href="https://github.com/QurexionTracker/Qurexion/releases/latest/download/QUREXION-Setup.exe" data-download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 21h16"/></svg>Download for Windows</a>
+    </div>
+    <p class="note">No payment details needed · Runs in the browser or as a Windows app · One account for both</p>
+    <div class="shot reveal"><div class="frame"><div class="bar"><i></i><i></i><i></i></div><img src="../assets/shot-overview.jpg" alt="QUREXION overview with metrics, open positions and risk"></div></div>
+  </div>
+</header>
+
+<section class="tools">
+  <div class="wrap">
+    <span class="eyebrow">8 tools · one app</span>
+    <div class="chips">
+      <a class="chip" href="#f-sync">Exchange sync</a><a class="chip" href="#f-review">Trade review</a><a class="chip" href="#f-reports">Reports</a><a class="chip" href="#f-warn">Alert center</a>
+      <a class="chip" href="#ki">AI coach</a><a class="chip" href="#f-tax">Tax export</a><a class="chip" href="#f-reports">Scenario simulator</a><a class="chip" href="#f-review">Weekly recap</a>
+    </div>
+    <div class="stats">
+      <div class="stat reveal"><b>6</b><span>exchanges connected automatically</span></div>
+      <div class="stat reveal"><b>9</b><span>reports – from metrics to risk</span></div>
+      <div class="stat reveal"><b>5</b><span>languages: DE, EN, FR, ES, IT</span></div>
+      <div class="stat reveal"><b>2</b><span>ways: web app &amp; Windows app</span></div>
+    </div>
+    <div class="exch" id="boersen">
+      <p>Works with</p>
+      <div class="row"><span>Bitget</span><span>Bitunix</span><span>Binance</span><span>Bybit</span><span>OKX</span><span>Hyperliquid</span><span style="opacity:.45">+ CSV import</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="funktionen">
+  <div class="wrap">
+    <div class="center"><span class="eyebrow">Everything in one place</span><h2>From trade to insight –<br>no spreadsheets, no copy-paste.</h2>
+      <p class="lead">Connect your exchange once. From then on every trade lands in your journal automatically, with fees and funding – and QUREXION turns it into answers.</p></div>
+
+    <div class="feature" id="f-sync">
+      <div class="txt reveal"><span class="eyebrow">Exchange sync</span><h3>Your trades arrive on their own.</h3>
+        <p>See open positions live; closed ones land in your journal automatically – including fees, funding and leverage.</p>
+        <ul class="checks"><li>Live PnL and liquidation distance of your open positions</li><li>Sync every 60 seconds, positions every 5 seconds</li><li>Read-only keys – QUREXION can’t trade or withdraw</li></ul></div>
+      <div class="media reveal"><div class="frame"><div class="bar"><i></i><i></i><i></i></div><img src="../assets/shot-exchanges.jpg" alt="Exchange sync with status and events"></div></div>
+    </div>
+
+    <div class="feature rev" id="f-review">
+      <div class="txt reveal"><span class="eyebrow">Trade review & weekly recap</span><h3>Get better in 20 seconds per trade.</h3>
+        <p>Setup, plan, emotion, lesson – QUREXION asks briefly and automatically shows how close to the best price you exited.</p>
+        <ul class="checks"><li>Focus mode: question by question, fully keyboard-driven</li><li>Weekly recap with 3 insights from your real trades</li><li>Weekly goals that QUREXION checks automatically</li></ul></div>
+      <div class="media reveal"><div class="frame"><div class="bar"><i></i><i></i><i></i></div><img src="../assets/shot-review.jpg" alt="Reviewing a trade with price chart and questions"></div></div>
+    </div>
+
+    <div class="feature" id="f-reports">
+      <div class="txt reveal"><span class="eyebrow">Reports</span><h3>See what really costs you money.</h3>
+        <p>Results by weekday, time of day, coin and leverage. Discipline vs. emotion – in dollars. And what would have happened if you had cut your losses earlier.</p>
+        <ul class="checks"><li>9 reports: trade history, metrics, risk, emotions, playbook, market regime …</li><li>Scenario simulator: your real trades recalculated with halved losses</li><li>Shareable cards of your best trades – amounts hidden if you like</li></ul></div>
+      <div class="media reveal"><div class="frame"><div class="bar"><i></i><i></i><i></i></div><img src="../assets/shot-reports.jpg" alt="Emotions report: discipline vs. emotion in dollars"></div></div>
+    </div>
+
+    <div class="feature rev" id="f-warn">
+      <div class="txt reveal"><span class="eyebrow">Alert center</span><h3>Warned before it gets expensive.</h3>
+        <p>When you’re in a trade and something important happens, QUREXION alerts you – as a pop-up, Windows notification and sound.</p>
+        <ul class="checks"><li>US macro events (Fed, CPI, jobs) with advance notice</li><li>Fast price moves, liquidation waves, extreme funding</li><li>Your own risk rules: max trades, revenge pause, mandatory stop loss</li></ul></div>
+      <div class="media reveal"><div class="frame"><div class="bar"><i></i><i></i><i></i></div><img src="../assets/shot-warn.jpg" alt="Alert center with current alerts on open trades"></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="ki" style="padding-top:20px">
+  <div class="wrap">
+    <div class="center"><span class="eyebrow">AI coach</span><h2>Just ask your journal.</h2>
+      <p class="lead">“How do my short trades do on Mondays?” – QUREXION finds the matching trades, does the math itself and only lets the AI phrase the answer. Nothing is made up.</p></div>
+    <div class="cards">
+      <div class="card reveal"><span class="tag">Coach</span><span class="live">Active</span><div class="ico" style="margin-top:18px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2zM9 21h6"/></svg></div><h4>Strengths & weaknesses</h4><p>Automatically finds where you make and lose money – by time of day, coin, leverage and behavior.</p></div>
+      <div class="card reveal"><span class="tag">Chat</span><span class="live">Active</span><div class="ico" style="margin-top:18px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><h4>Ask your journal</h4><p>Questions in plain language, answers with real numbers from your trades.</p></div>
+      <div class="card reveal"><span class="tag">Risk</span><span class="live">Active</span><div class="ico" style="margin-top:18px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h4>Pre-trade check</h4><p>Position size from your risk, your rules and your track record in exactly this situation – before you enter.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="sicherheit" style="padding-top:20px">
+  <div class="wrap">
+    <div class="privacy reveal">
+      <div><span class="eyebrow">Security</span><div class="big" style="margin-top:12px"><span class="grad">100&nbsp;%</span><br>yours.</div></div>
+      <div>
+        <p class="lead" style="color:#cbd5e1">You decide: in the Windows app, trades and keys stay on your PC. In the web app they are stored encrypted in your account on servers in Frankfurt, Germany. We never sell data.</p>
+        <ul class="checks"><li>API keys stored encrypted – read-only permissions recommended</li><li>QUREXION can’t place orders or withdraw anything</li><li>Signed updates – only official versions get installed</li><li>The AI only receives calculated metrics – or use the local AI and nothing leaves your PC</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="so-gehts" style="padding-top:20px">
+  <div class="wrap">
+    <div class="center"><span class="eyebrow">Ready in 3 minutes</span><h2>It's that easy.</h2></div>
+    <div class="steps">
+      <div class="step reveal"><div class="in"><span class="num">STEP 1</span><h4>Account & setup</h4><p>Create a free account, then start in the browser or download the Windows app. The wizard guides you through language and setup.</p><p class="hint">Windows shows “Windows protected your PC”? Click <b>More info</b> and then <b>Run anyway</b>. <a href="#smartscreen">Why?</a></p></div></div>
+      <div class="step reveal"><div class="in"><span class="num">STEP 2</span><h4>Connect your exchange</h4><p>Enter your exchange’s read-only key – with step-by-step instructions in the wizard.</p></div></div>
+      <div class="step reveal"><div class="in"><span class="num">STEP 3</span><h4>Get insights</h4><p>QUREXION loads your trades and instantly shows your strongest and weakest patterns.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="trailer" style="padding-top:20px">
+  <div class="wrap">
+    <div class="center"><span class="eyebrow">Trailer</span><h2>QUREXION in 60 seconds.</h2></div>
+    <div class="video reveal"><video src="../assets/trailer.mp4" poster="../assets/trailer-poster.jpg" controls preload="none" playsinline></video></div>
+  </div>
+</section>
+
+<section class="block" id="preise" style="padding-top:20px">
+  <div class="wrap center">
+    <span class="eyebrow">Pricing</span>
+    <h2 style="margin-top:12px">One plan. Every feature.</h2>
+    <p class="lead">Try it free for 14 days – no payment details. Then monthly or yearly, cancel anytime.</p>
+    <div class="plans">
+      <div class="plan reveal"><p class="pn">Monthly</p><p class="pp"><b>€14.99</b> / month</p><p class="ps">cancel monthly</p></div>
+      <div class="plan best reveal"><span class="badge">save 33 %</span><p class="pn">Yearly</p><p class="pp"><b>€119</b> / year</p><p class="ps">equals €9.92 per month</p></div>
+    </div>
+    <ul class="checks plancheck">
+      <li>Automatic exchange sync (6 exchanges)</li><li>Trade review &amp; weekly recap</li><li>All 9 reports &amp; scenario simulator</li>
+      <li>Alert center &amp; risk rules</li><li>AI coach &amp; journal chat</li><li>Tax export &amp; automatic backups</li>
+    </ul>
+    <div class="ctas" style="display:flex;justify-content:center;margin-top:30px"><a class="btn btn-primary" href="https://app.qurexion.com/?lang=en#registrieren">Try free for 14 days</a></div>
+    <p style="color:var(--dim);font-size:13px;margin-top:14px">Prices incl. VAT · Secure payment via Stripe (card, Apple Pay, Google Pay)</p>
+  </div>
+</section>
+
+<section class="block" id="faq" style="padding-top:20px">
+  <div class="wrap">
+    <div class="center"><span class="eyebrow">FAQ</span><h2>Frequently asked questions</h2></div>
+    <div class="faq">
+      <details><summary>What is a trading journal – and why do I need one?</summary><p>A journal records every trade with its result, setup and thoughts. Only then can you see which patterns make you money and which cost you money. QUREXION does the logging for you automatically.</p></details>
+      <details><summary>Which exchanges are supported?</summary><p>Bitget, Bitunix, Binance, Bybit, OKX and Hyperliquid via API. Other exchanges can be added via CSV import.</p></details>
+      <details><summary>Can QUREXION trade on my behalf?</summary><p>No. You connect your exchange with a read-only key. QUREXION can only read trades and positions – it can’t place orders or withdraw anything.</p></details>
+      <details><summary>Where is my data stored?</summary><p>In the Windows app on your PC – optionally with cloud sync to your account. In the web app in your account (Supabase, Frankfurt); exchange keys are stored encrypted there and only sent to the exchange. For prices and market data QUREXION uses public exchange APIs. For AI coach answers QUREXION only sends the calculated metrics for your question to QUREXION AI – if you prefer not to, switch to the local AI in the settings.</p></details>
+      <details id="smartscreen"><summary>Windows warns during installation – is that normal?</summary><p>Yes. Windows SmartScreen warns about new programs that haven’t been downloaded often yet or don’t have an expensive publisher certificate. Here’s how to run the setup anyway:</p><ol class="ol"><li>In the blue “Windows protected your PC” window, click <b>More info</b>.</li><li>At the bottom, click <b>Run anyway</b>.</li><li>The setup starts normally.</li></ol><p>Only download QUREXION from this site. Updates then arrive automatically and are digitally signed – QUREXION only installs official versions.</p></details>
+      <details><summary>Does QUREXION run on Mac or mobile?</summary><p>Yes – the web app at app.qurexion.com runs in any modern browser, including Mac, tablet and phone. On your phone you can add it to your home screen. The desktop app is available for Windows.</p></details>
+      <details id="f-tax"><summary>Does QUREXION help with taxes?</summary><p>QUREXION exports all closed trades of a year in USD and EUR (ECB reference rate on the closing day) as a spreadsheet and report. This is not tax advice – please review it with your tax advisor.</p></details>
+      <details><summary>How much does QUREXION cost?</summary><p>You try QUREXION free for 14 days – no payment details. After that, QUREXION Pro costs €14.99 per month or €119 per year (incl. VAT). You can cancel anytime, effective at the end of the period.</p></details>
+      <details><summary>Why do I need an account?</summary><p>You use your account to sign in to the web app and the Windows app, and it checks whether your trial or subscription is active. The Windows app keeps working offline for up to 7 days.</p></details>
+      <details><summary>Is QUREXION available in the browser?</summary><p>Yes – at app.qurexion.com, with every feature: exchange sync, trade review, reports, alerts and AI coach. With cloud sync you see the same data in the browser and the Windows app.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="block" style="padding-top:10px">
+  <div class="wrap">
+    <div class="final reveal"><span class="eyebrow">Ready?</span><h2 style="margin-top:12px">Stop guessing. Start understanding how you trade.</h2>
+      <div class="ctas"><a class="btn btn-primary" href="https://app.qurexion.com/?lang=en#registrieren">Try free for 14 days</a><a class="btn btn-ghost" href="https://github.com/QurexionTracker/Qurexion/releases/latest/download/QUREXION-Setup.exe" data-download>Download for Windows</a></div>
+      <p class="note" style="color:var(--dim);margin-top:14px;font-size:13px">Windows 10 / 11 · 64-bit</p></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div><a class="brand" href="#"><img src="../assets/logo-mark.png" alt=""><span>QU<b>REXION</b></span></a><p style="margin-top:14px;max-width:360px">The crypto trading journal for traders who want to understand why they win – and why they don’t.</p></div>
+      <div><h5>Product</h5><ul><li><a href="#funktionen">Features</a></li><li><a href="#boersen">Exchanges</a></li><li><a href="#sicherheit">Security</a></li><li><a href="https://github.com/QurexionTracker/Qurexion/releases" >Releases</a></li></ul></div>
+      <div><h5>Legal</h5><ul><li><a href="contact.html">Contact</a></li><li><a href="../impressum.html">Legal notice (DE)</a></li><li><a href="../datenschutz.html">Privacy (DE)</a></li><li><a href="../agb.html">Terms (DE)</a></li></ul></div>
+    </div>
+    <p class="disc">Risk notice: Trading crypto assets and leveraged derivatives involves substantial risk and can result in the total loss of your capital. QUREXION is a tool for analyzing your own trades and does not provide investment, financial or tax advice. Past results are no indication of future results.<br><br>© 2026 QUREXION</p>
+  </div>
+</footer>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
