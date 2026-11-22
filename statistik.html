@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Statistik · QUREXION</title>
+<link rel="icon" href="/assets/logo-mark.png">
+<style>
+:root{--bg:#020408;--surface:#0b0f1a;--line:#1a2030;--text:#f1f5f9;--muted:#94a3b8;--dim:#64748b;--violet:#7f0df2;--vl:#b084ff;--green:#10b981;--red:#f43f5e}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;min-height:100vh}
+.glow{position:fixed;inset:0;background:radial-gradient(600px 400px at 10% -10%,rgba(127,13,242,.35),transparent 70%),radial-gradient(500px 300px at 95% 0%,rgba(127,13,242,.15),transparent 70%);pointer-events:none}
+.wrap{max-width:1240px;margin:0 auto;padding:28px 32px 48px;position:relative}
+.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:20px;letter-spacing:.5px;color:var(--text);text-decoration:none}.brand img{width:30px}.brand em{font-style:normal;color:var(--vl)}
+.pill{font-size:12px;color:#cbd5e1;border:1px solid #1e2434;background:var(--surface);border-radius:999px;padding:7px 12px;display:flex;gap:8px;align-items:center}
+.pill button{background:none;border:0;color:var(--dim);font:inherit;cursor:pointer;padding:0 0 0 6px}.pill button:hover{color:var(--text)}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green)}
+h1{font-size:30px;font-weight:900}h1 em{font-style:normal;color:var(--vl)}
+.sub{color:var(--muted);font-size:14px;margin-top:6px}
+.head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:22px;gap:16px;flex-wrap:wrap}
+.seg{display:flex;background:var(--surface);border:1px solid #1e2434;border-radius:12px;padding:4px}
+.seg button{font:inherit;font-size:13px;padding:7px 14px;border-radius:9px;color:var(--muted);font-weight:600;background:none;border:0;cursor:pointer}.seg .on{background:var(--violet);color:#fff}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px}
+.k{font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:var(--dim);font-weight:700}
+.v{font-size:30px;font-weight:800;margin-top:8px}.d{font-size:12px;margin-top:6px;color:var(--green);font-weight:600}.d.n{color:var(--muted)}.d.neg{color:var(--red)}
+.row{display:grid;grid-template-columns:2fr 1fr;gap:14px;margin-bottom:14px}.row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+.ct{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;gap:8px}.ct h3{font-size:15px;font-weight:700}
+.br{margin-bottom:12px}.bl{display:flex;justify-content:space-between;font-size:13px;margin-bottom:6px;color:#cbd5e1;gap:10px}.bl b{font-weight:700;color:var(--text)}
+.bt{height:8px;background:#141a28;border-radius:6px;overflow:hidden}.bt i{display:block;height:100%;border-radius:6px}
+.fun{display:flex;flex-direction:column;gap:10px}.fs{display:flex;align-items:center;gap:12px}.fs .n{width:64px;font-weight:800;font-size:20px}.fs .t{font-size:13px;color:var(--muted)}.fs .bx{flex:1}
+.tag{font-size:11px;color:var(--vl);background:rgba(127,13,242,.15);border:1px solid rgba(127,13,242,.35);padding:4px 9px;border-radius:999px;font-weight:600;white-space:nowrap}
+.empty{color:var(--dim);font-size:13px;padding:10px 0}
+.hide{display:none!important}
+/* Login */
+.auth{max-width:400px;margin:60px auto 0}.auth .card{padding:28px}
+.auth h2{font-size:22px;font-weight:800;margin-bottom:6px}.auth p{color:var(--muted);font-size:14px;margin-bottom:20px}
+label{display:block;font-size:12px;color:var(--muted);font-weight:600;margin:12px 0 6px}
+input{width:100%;background:#070a12;border:1px solid #232a3b;border-radius:10px;padding:12px 14px;color:var(--text);font:inherit;font-size:15px}input:focus{outline:none;border-color:var(--violet)}
+.btn{width:100%;margin-top:18px;background:var(--violet);color:#fff;border:0;border-radius:10px;padding:12px;font:inherit;font-weight:700;font-size:15px;cursor:pointer}.btn:disabled{opacity:.6}
+.btn.g{background:#fff;color:#111;margin-top:10px;display:flex;align-items:center;justify-content:center;gap:10px}
+.or{display:flex;align-items:center;gap:10px;color:var(--dim);font-size:12px;margin:18px 0 0}.or:before,.or:after{content:"";flex:1;height:1px;background:#1e2434}
+.msg{margin-top:14px;font-size:13px;padding:10px 12px;border-radius:10px}.msg.err{background:rgba(244,63,94,.1);color:#fda4af;border:1px solid rgba(244,63,94,.3)}
+.lock{text-align:center}.lock .ic{font-size:40px;margin-bottom:10px}
+.loading{color:var(--muted);font-size:14px;padding:40px 0;text-align:center}
+@media(max-width:900px){.grid4{grid-template-columns:1fr 1fr}.row,.row3{grid-template-columns:1fr}}
+@media(max-width:600px){.wrap{padding:20px 16px}h1{font-size:24px}.v{font-size:24px}.brand{font-size:17px}.seg button{padding:7px 10px}}
+</style>
+</head>
+<body>
+<div class="glow"></div>
+<div class="wrap">
+  <div class="top">
+    <a class="brand" href="/"><img src="/assets/logo-mark.png" alt=""><span>QU<em>REXION</em></span></a>
+    <div class="pill hide" id="who"><span class="dot"></span><span id="whoMail"></span><button id="bOut" title="Abmelden">Abmelden</button></div>
+  </div>
+
+  <!-- Anmeldung -->
+  <div class="auth hide" id="vAuth"><div class="card">
+    <h2>Statistik</h2><p>Melde dich mit deinem QUREXION-Konto an.</p>
+    <button class="btn g" id="bGoogle"><svg width="18" height="18" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>Mit Google anmelden</button>
+    <div class="or">oder</div>
+    <form id="fAuth">
+      <label for="iMail">E-Mail</label><input id="iMail" type="email" autocomplete="email" required>
+      <label for="iPw">Passwort</label><input id="iPw" type="password" autocomplete="current-password" required>
+      <button class="btn" id="bIn" type="submit">Anmelden</button>
+    </form>
+    <div id="aMsg"></div>
+  </div></div>
+
+  <!-- Kein Zugriff -->
+  <div class="auth hide" id="vDenied"><div class="card lock">
+    <div class="ic">🔒</div><h2>Kein Zugriff</h2>
+    <p id="deniedTxt">Dieses Konto ist nicht als Admin freigeschaltet.</p>
+    <button class="btn" id="bOut2">Mit anderem Konto anmelden</button>
+  </div></div>
+
+  <!-- Statistik -->
+  <div class="hide" id="vStats">
+    <div class="head">
+      <div><h1>Website-<em>Statistik</em></h1><div class="sub">Ohne Cookies · ohne IP-Adressen · nur du hast Zugriff</div></div>
+      <div class="seg" id="seg"><button data-d="1">Heute</button><button data-d="7">7 Tage</button><button data-d="30" class="on">30 Tage</button><button data-d="0">Gesamt</button></div>
+    </div>
+    <div id="body"><div class="loading">Lädt …</div></div>
+  </div>
+</div>
+
+<script src="/assets/supabase.js"></script>
+<script>
+(function(){
+  var SB_URL='https://saqrxqanucedbwpsvhxl.supabase.co', SB_KEY='sb_publishable_YjMx-VPZD6ChDy9OgX9IEQ_XEbd2-pt';
+  var HERE=location.origin+location.pathname;
+  var sb=window.supabase.createClient(SB_URL,SB_KEY,{auth:{flowType:'implicit',detectSessionInUrl:true,persistSession:true,autoRefreshToken:true,storageKey:'qx_web_auth'}});
+  var $=function(id){return document.getElementById(id)};
+  var days=30, session=null;
+  var esc=function(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})};
+  var nf=new Intl.NumberFormat('de-DE');
+  var FLAG={DE:'🇩🇪 Deutschland',AT:'🇦🇹 Österreich',CH:'🇨🇭 Schweiz',US:'🇺🇸 USA',GB:'🇬🇧 Großbritannien',FR:'🇫🇷 Frankreich',ES:'🇪🇸 Spanien',IT:'🇮🇹 Italien',NL:'🇳🇱 Niederlande',BE:'🇧🇪 Belgien',LU:'🇱🇺 Luxemburg',PL:'🇵🇱 Polen',CZ:'🇨🇿 Tschechien',SE:'🇸🇪 Schweden',NO:'🇳🇴 Norwegen',DK:'🇩🇰 Dänemark',FI:'🇫🇮 Finnland',IE:'🇮🇪 Irland',PT:'🇵🇹 Portugal',TR:'🇹🇷 Türkei',GR:'🇬🇷 Griechenland',HU:'🇭🇺 Ungarn',RO:'🇷🇴 Rumänien',UA:'🇺🇦 Ukraine',AE:'🇦🇪 VAE',SG:'🇸🇬 Singapur',JP:'🇯🇵 Japan',IN:'🇮🇳 Indien',HK:'🇭🇰 Hongkong',CN:'🇨🇳 China',KR:'🇰🇷 Südkorea',AU:'🇦🇺 Australien',CA:'🇨🇦 Kanada',BR:'🇧🇷 Brasilien',MX:'🇲🇽 Mexiko','??':'🌐 Unbekannt'};
+  var SRC={'X / Twitter':'𝕏 / Twitter','Direkt':'Direkt eingegeben'};
+  var PAGE={'/':'Startseite','/en/':'/en – Englisch','/en/contact':'/en – Kontakt','/kontakt':'Kontakt','/konto':'Konto','/datenschutz':'Datenschutz','/impressum':'Impressum','/agb':'AGB','/danke':'Danke (nach Kauf)','/abbruch':'Kauf abgebrochen','/bestaetigt':'E-Mail bestätigt'};
+
+  function show(v){['vAuth','vDenied','vStats'].forEach(function(x){$(x).classList.toggle('hide',x!==v)});$('who').classList.toggle('hide',!session)}
+  function msg(t){$('aMsg').innerHTML=t?'<div class="msg err">'+esc(t)+'</div>':''}
+  function bars(items,color,label){
+    if(!items||!items.length)return '<div class="empty">Noch keine Daten.</div>';
+    var m=Math.max.apply(null,items.map(function(i){return i.n}))||1;
+    return items.map(function(i){return '<div class="br"><div class="bl"><span>'+esc(label?label(i.k):i.k)+'</span><b>'+nf.format(i.n)+'</b></div><div class="bt"><i style="width:'+Math.max(2,i.n/m*100).toFixed(1)+'%;background:'+color+'"></i></div></div>'}).join('');
+  }
+  function chart(daily){
+    var W=760,H=210,n=daily.length;
+    if(!n)return '<div class="empty">Noch keine Daten.</div>';
+    var vals=daily.map(function(d){return d.v}),mx=Math.max(4,Math.max.apply(null,vals))*1.15;
+    var x=function(i){return n<2?W/2:i*W/(n-1)}, y=function(v){return H-v/mx*H};
+    var pts=vals.map(function(v,i){return x(i).toFixed(1)+','+y(v).toFixed(1)}).join(' ');
+    var grid=[.25,.5,.75,1].map(function(f){return '<line x1="0" x2="'+W+'" y1="'+H*f+'" y2="'+H*f+'" stroke="#141a28"/>'}).join('');
+    var step=Math.max(1,Math.ceil(n/6)),lab='';
+    for(var i=0;i<n;i+=step){var d=new Date(daily[i].d);lab+='<text x="'+x(i).toFixed(0)+'" y="'+(H+22)+'" fill="#64748b" font-size="11" text-anchor="'+(i===0?'start':'middle')+'">'+d.getDate()+'.'+(d.getMonth()+1)+'.</text>'}
+    var dots=n<=31?vals.map(function(v,i){return '<circle cx="'+x(i).toFixed(1)+'" cy="'+y(v).toFixed(1)+'" r="3" fill="#b084ff"><title>'+new Date(daily[i].d).toLocaleDateString('de-DE')+': '+v+' Besucher</title></circle>'}).join(''):'';
+    return '<svg viewBox="0 0 '+W+' '+(H+30)+'" width="100%"><defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7f0df2" stop-opacity=".55"/><stop offset="1" stop-color="#7f0df2" stop-opacity="0"/></linearGradient></defs>'+grid+
+      (n>1?'<polygon points="0,'+H+' '+pts+' '+W+','+H+'" fill="url(#g)"/><polyline points="'+pts+'" fill="none" stroke="#b084ff" stroke-width="2.5" stroke-linejoin="round"/>':'')+dots+lab+'</svg>';
+  }
+  function pct(a,b){return b?Math.round(a/b*100):0}
+  function render(s){
+    var vis=s.visitors||0, prev=s.visitors_prev||0;
+    var delta=prev?Math.round((vis-prev)/prev*100):null;
+    var dTxt=days===0?'<div class="d n">seit Beginn der Zählung</div>':(delta===null?'<div class="d n">kein Vergleich möglich</div>':'<div class="d'+(delta<0?' neg':'')+'">'+(delta<0?'▼ ':'▲ ')+Math.abs(delta)+' % zum Vorzeitraum</div>');
+    var peak=null;(s.daily||[]).forEach(function(d){if(!peak||d.v>peak.v)peak=d});
+    var dev=s.devices||{},dt=(dev.mobile||0)+(dev.tablet||0)+(dev.desktop||0);
+    var devTxt=dt?'📱 Handy '+pct(dev.mobile||0,dt)+' % · 💻 PC '+pct(dev.desktop||0,dt)+' %'+(pct(dev.tablet||0,dt)>=1?' · Tablet '+pct(dev.tablet,dt)+' %':''):'';
+    var f=[[vis,'Besucher','#7f0df2'],[s.cta||0,'Klick auf „Kostenlos testen“ / App','#7f0df2'],[s.signups||0,'Konto erstellt','#7f0df2'],[s.paying_new||0,'Abo abgeschlossen','#10b981']];
+    var fm=Math.max(1,vis);
+    $('body').innerHTML=
+      '<div class="grid4">'+
+        '<div class="card"><div class="k">Besucher</div><div class="v">'+nf.format(vis)+'</div>'+dTxt+'</div>'+
+        '<div class="card"><div class="k">Seitenaufrufe</div><div class="v">'+nf.format(s.views||0)+'</div><div class="d n">Ø '+(vis?(s.views/vis).toFixed(1).replace('.',','):'0')+' Seiten pro Besuch</div></div>'+
+        '<div class="card"><div class="k">Setup-Downloads</div><div class="v">'+nf.format(s.downloads||0)+'</div><div class="d">'+pct(s.downloads||0,vis)+' % der Besucher</div></div>'+
+        '<div class="card"><div class="k">Neue Konten</div><div class="v">'+nf.format(s.signups||0)+'</div><div class="d">davon '+nf.format(s.paying_new||0)+' zahlend · gesamt '+nf.format(s.paying_total||0)+' Abos</div></div>'+
+      '</div>'+
+      '<div class="row"><div class="card"><div class="ct"><h3>Besucher pro Tag</h3>'+(peak&&peak.v>0&&s.daily.length>1?'<span class="tag">Spitze '+new Date(peak.d).toLocaleDateString('de-DE',{day:'numeric',month:'numeric'})+' · '+peak.v+'</span>':'')+'</div>'+chart(s.daily||[])+'</div>'+
+      '<div class="card"><div class="ct"><h3>Woher sie kommen</h3></div>'+bars(s.sources,'#7f0df2',function(k){return SRC[k]||k})+'</div></div>'+
+      '<div class="row3">'+
+        '<div class="card"><div class="ct"><h3>Beliebteste Seiten</h3></div>'+bars(s.pages,'#3b82f6',function(k){return PAGE[k]||k})+'</div>'+
+        '<div class="card"><div class="ct"><h3>Länder & Geräte</h3></div>'+bars(s.countries,'#10b981',function(k){return FLAG[k]||('🌐 '+k)})+(devTxt?'<div class="bl" style="margin-top:4px"><span>'+devTxt+'</span></div>':'')+'</div>'+
+        '<div class="card"><div class="ct"><h3>Vom Besuch zum Kunden</h3></div><div class="fun">'+f.map(function(r){return '<div class="fs"><div class="n">'+nf.format(r[0])+'</div><div class="bx"><div class="t">'+r[1]+'</div><div class="bt"><i style="width:'+Math.max(r[0]?1.5:0,Math.min(100,r[0]/fm*100)).toFixed(1)+'%;background:'+r[2]+'"></i></div></div></div>'}).join('')+'</div></div>'+
+      '</div>';
+  }
+  async function load(){
+    $('body').innerHTML='<div class="loading">Lädt …</div>';
+    var r=await sb.rpc('qx_stats',{p_days:days});
+    if(r.error){
+      if(/forbidden|42501|permission/i.test((r.error.message||'')+(r.error.code||''))){$('deniedTxt').textContent='Das Konto '+(session.user.email||'')+' ist nicht als Admin freigeschaltet.';show('vDenied');return}
+      $('body').innerHTML='<div class="card"><div class="empty">Fehler beim Laden: '+esc(r.error.message)+'</div></div>';return;
+    }
+    render(r.data||{});
+  }
+  async function route(){
+    var g=await sb.auth.getSession();session=g.data.session;
+    if(!session){show('vAuth');return}
+    $('whoMail').textContent=session.user.email||'';show('vStats');load();
+  }
+  $('seg').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;days=+b.dataset.d;[].forEach.call(this.children,function(c){c.classList.toggle('on',c===b)});load()});
+  $('fAuth').onsubmit=async function(e){e.preventDefault();msg('');$('bIn').disabled=true;
+    var r=await sb.auth.signInWithPassword({email:$('iMail').value.trim(),password:$('iPw').value});$('bIn').disabled=false;
+    if(r.error){msg(/invalid/i.test(r.error.message)?'E-Mail oder Passwort ist falsch.':r.error.message);return}route()};
+  $('bGoogle').onclick=async function(){var r=await sb.auth.signInWithOAuth({provider:'google',options:{redirectTo:HERE,queryParams:{prompt:'select_account'}}});if(r.error)msg(r.error.message)};
+  var out=async function(){await sb.auth.signOut();session=null;show('vAuth')};
+  $('bOut').onclick=out;$('bOut2').onclick=out;
+  sb.auth.onAuthStateChange(function(ev){if(ev==='SIGNED_IN'&&!session)route()});
+  route();
+})();
+</script>
+</body>
+</html>
