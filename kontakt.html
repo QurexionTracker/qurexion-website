@@ -142,6 +142,8 @@ footer a:hover{color:#fff}
 @media (max-width:520px){ .nav-cta .btn-ghost{display:none} .stat b{font-size:30px} }
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
 .reveal.in{opacity:1;transform:none}
+
+@media (max-width:600px){h1{font-size:30px!important;line-height:1.12;hyphens:auto;-webkit-hyphens:auto;overflow-wrap:anywhere}body{overflow-x:hidden}}
 </style>
 </head>
 <body>
@@ -154,7 +156,7 @@ footer a:hover{color:#fff}
   <label class="fl">E-Mail-Adresse<input name="email" type="email" maxlength="200" required></label>
   <label class="fl">Nachricht<textarea name="message" rows="7" maxlength="5000" required></textarea></label>
   <input name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
-  <label style="display:flex;gap:10px;align-items:flex-start;color:#94a3b8;font-size:14px"><input type="checkbox" required style="margin-top:4px">Ich bin einverstanden, dass meine Angaben zur Beantwortung meiner Anfrage verarbeitet werden (siehe <a href="datenschutz.html">Datenschutz</a>).</label>
+  <label style="display:flex;gap:10px;align-items:flex-start;color:#94a3b8;font-size:14px"><input type="checkbox" required style="margin-top:4px;flex-shrink:0"><span>Ich bin einverstanden, dass meine Angaben zur Beantwortung meiner Anfrage verarbeitet werden (siehe <a href="datenschutz.html">Datenschutz</a>).</span></label>
   <button class="btn btn-primary" type="submit" id="cfb" style="justify-self:start">Nachricht senden</button>
   <p id="cfm" style="min-height:22px"></p>
 </form>
@@ -165,4 +167,5 @@ try{var r=await fetch('https://saqrxqanucedbwpsvhxl.supabase.co/functions/v1/con
 if(r.ok){f.reset();m.style.color='#34d399';m.textContent='Danke! Deine Nachricht ist angekommen – wir melden uns per E-Mail.';}else{m.style.color='#f87171';m.textContent=j.error||'Senden fehlgeschlagen. Bitte schreib an support@qurexion.com.';}}
 catch(x){m.style.color='#f87171';m.textContent='Senden fehlgeschlagen. Bitte schreib an support@qurexion.com.'}b.disabled=false;};
 </script>
-</main></body></html>
+</main><script src="/assets/qx-track.js" defer></script>
+</body></html>
