@@ -192,6 +192,144 @@ nav.top.open .menu-btn i:nth-child(1){transform:translateY(6px) rotate(45deg)}na
   .frame.pf img{border-radius:22px}
 }
 @media (max-width:370px){ .nav-cta .lang-sw{display:none} }
+
+/* Hero (v1.35): komplette Übersicht, scrollt langsam durch alle Bereiche */
+.scrollshot{position:relative;border-radius:12px;overflow:hidden;aspect-ratio:1600/1082}
+.scrollshot img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 0;border-radius:0;animation:qxscroll 42s ease-in-out 1.5s infinite alternate}
+.scrollshot:hover img{animation-play-state:paused}
+.scrollshot .sshint{position:absolute;right:12px;bottom:12px;font-size:11px;font-weight:700;letter-spacing:.04em;color:#ddd6fe;background:rgba(11,15,26,.82);border:1px solid rgba(139,92,246,.45);padding:6px 10px;border-radius:999px;backdrop-filter:blur(6px);pointer-events:none}
+@keyframes qxscroll{0%,6%{object-position:50% 0}94%,100%{object-position:50% 100%}}
+@media (prefers-reduced-motion:reduce){.scrollshot img{animation:none}}
+@media (max-width:600px){.scrollshot{aspect-ratio:600/1298;border-radius:22px}.scrollshot img{animation-duration:60s}}
+
+/* ===== v2 (TradeZella-Aufbau): Mega-Menü, geteilter Hero, Tabs, KI-Helfer, Funktionskarten ===== */
+.links{align-items:center}
+.dd{position:static}
+nav.top .wrap{position:relative}
+.dd.rel{position:relative}
+.dd>button{all:unset;cursor:pointer;display:flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:var(--muted);padding:26px 0}
+.mega{max-height:calc(100vh - 90px);overflow:auto}
+.dd>button:after{content:"";width:7px;height:7px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg) translateY(-2px);transition:.2s}
+.dd:hover>button,.dd.open>button{color:#fff}
+.dd:hover>button:after,.dd.open>button:after{transform:rotate(-135deg) translateY(-1px)}
+.mega{position:absolute;top:100%;left:50%;transform:translate(-50%,8px);opacity:0;visibility:hidden;transition:.18s;background:#0b0f1a;border:1px solid rgba(255,255,255,.09);border-radius:22px;box-shadow:0 40px 100px rgba(0,0,0,.75),0 0 0 1px rgba(127,13,242,.12);padding:18px;z-index:60}
+.dd:hover .mega,.dd.open .mega{opacity:1;visibility:visible;transform:translate(-50%,0)}
+.mega.products{width:min(1000px,calc(100vw - 48px));display:grid;grid-template-columns:1fr 1fr 300px;gap:14px}
+.mega.products .mlist{grid-column:3;grid-row:1/3}
+.pcard{display:block;border-radius:16px;border:1px solid var(--line);background:var(--surface2);padding:14px;transition:.2s}
+.pcard:hover{border-color:rgba(139,92,246,.55);background:#121833}
+.pcard .ph{border-radius:10px;overflow:hidden;aspect-ratio:16/8.5;background:#05070d;border:1px solid var(--line)}
+.pcard .ph img{width:100%;height:100%;object-fit:cover;object-position:top left}
+.pcard b{display:flex;align-items:center;gap:8px;margin-top:12px;font-size:15px;color:#fff}
+.pcard span{display:block;font-size:12.5px;color:var(--muted);margin-top:4px;line-height:1.45}
+.mlist{display:grid;gap:4px;align-content:start}
+.mitem{display:flex;gap:12px;padding:11px 12px;border-radius:14px;transition:.15s}
+.mitem:hover{background:rgba(139,92,246,.1)}
+.mitem i{flex:0 0 34px;height:34px;border-radius:10px;display:grid;place-items:center;background:rgba(139,92,246,.14);color:var(--violet3);font-style:normal}
+.mitem i svg{width:17px;height:17px}
+.mitem b{display:block;font-size:14px;color:#fff}
+.mitem span{display:block;font-size:12.5px;color:var(--muted);line-height:1.4;margin-top:2px}
+.mega.cols{width:560px;display:grid;grid-template-columns:1fr 1fr;gap:4px}
+.mega.single{width:420px}
+.mega .mh{grid-column:1/-1;font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);padding:4px 12px 8px}
+.new{font-size:10px;font-weight:900;letter-spacing:.08em;color:#fff;background:var(--violet);padding:2px 7px;border-radius:999px}
+/* Hero v2 */
+.hero.v2{text-align:left;padding:70px 0 30px}
+.hero.v2 .wrap{max-width:1320px}
+.hgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:50px;align-items:center}
+.hero.v2 h1{margin:20px 0 0;font-size:clamp(36px,4.3vw,60px)}
+.hero.v2 p.lead{margin:20px 0 0;max-width:560px}
+.hero.v2 .ctas{justify-content:flex-start}
+.hero.v2 .shot{margin:0}
+.everything{margin-top:30px}
+.everything p{font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}
+.everything .chips{justify-content:flex-start;margin-top:10px}
+.everything .chip{font-size:13px;padding:7px 13px}
+.trust{display:flex;gap:18px;flex-wrap:wrap;margin-top:18px;font-size:13px;color:var(--muted)}
+.trust span{display:flex;align-items:center;gap:7px}
+.trust span:before{content:"";width:16px;height:16px;border-radius:5px;background:rgba(16,185,129,.18) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2310b981' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/10px no-repeat}
+/* Tabs */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:36px}
+.tab{all:unset;cursor:pointer;display:flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;border:1px solid var(--line);background:var(--surface);font-size:14px;font-weight:700;color:var(--muted);transition:.2s}
+.tab svg{width:16px;height:16px}
+.tab:hover{color:#fff;border-color:rgba(139,92,246,.4)}
+.tab.on{color:#fff;background:linear-gradient(135deg,rgba(127,13,242,.35),rgba(139,92,246,.18));border-color:rgba(139,92,246,.7);box-shadow:0 0 30px rgba(127,13,242,.3)}
+.tpanel{display:none;margin-top:28px;border-radius:30px;border:1px solid var(--line);background:radial-gradient(ellipse at top left,rgba(127,13,242,.16),transparent 55%),var(--surface);padding:36px;grid-template-columns:minmax(0,.8fr) minmax(0,1.35fr);gap:40px;align-items:center}
+.tpanel.on{display:grid;animation:fadein .35s ease}
+@keyframes fadein{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.tpanel h3{font-size:clamp(26px,2.8vw,34px);font-weight:900;margin-top:10px}
+.tpanel p{color:var(--muted);margin-top:12px;font-size:16px}
+.tpanel .frame{padding:8px}
+/* Dark agents band */
+.band{margin-top:40px;padding:90px 0;background:radial-gradient(ellipse 70% 60% at 50% 0%,rgba(127,13,242,.28),transparent 70%),#05060c;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.agents{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:46px}
+.agent{border-radius:24px;border:1px solid rgba(255,255,255,.08);background:linear-gradient(180deg,#0d1122,#090c16);padding:24px;display:flex;flex-direction:column}
+.agent .top{display:flex;justify-content:space-between;align-items:center}
+.agent .aic{width:42px;height:42px;border-radius:13px;display:grid;place-items:center;color:#fff}
+.agent .aic svg{width:20px;height:20px}
+.agent .st{font-size:10px;font-weight:800;letter-spacing:.14em;color:var(--dim);border:1px solid var(--line);padding:4px 9px;border-radius:999px}
+.agent .k{margin-top:22px;font-size:11px;font-weight:800;letter-spacing:.16em;color:var(--dim);text-transform:uppercase}
+.agent h4{font-size:21px;font-weight:900;margin-top:6px;line-height:1.2}
+.agent p.d{color:var(--muted);font-size:14px;margin-top:10px}
+.bubbles{margin-top:20px;display:grid;gap:10px}
+.bub{font-size:13px;line-height:1.45;padding:11px 13px;border-radius:14px;background:rgba(255,255,255,.04);border:1px solid var(--line);color:#e2e8f0;display:flex;gap:10px}
+.bub:before{content:"";flex:0 0 8px;height:8px;border-radius:50%;margin-top:5px;background:var(--c,#8b5cf6);box-shadow:0 0 8px var(--c,#8b5cf6)}
+.bub.me{justify-self:end;max-width:85%;background:rgba(139,92,246,.16);border-color:rgba(139,92,246,.35)}
+.bub.me:before{display:none}
+.agent .foot{margin-top:auto;padding-top:18px;font-size:10.5px;font-weight:800;letter-spacing:.14em;color:var(--green);display:flex;align-items:center;gap:7px}
+.agent .foot:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green)}
+.ex{font-size:12px;color:var(--dim);text-align:center;margin-top:18px}
+/* Gradient feature cards */
+.gcards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:50px}
+.gcard{border-radius:26px;padding:26px 26px 0;overflow:hidden;display:flex;flex-direction:column;border:1px solid rgba(255,255,255,.1);min-height:440px}
+.gcard h4{font-size:21px;font-weight:900}
+.gcard p{font-size:14.5px;color:rgba(255,255,255,.78);margin-top:8px}
+.gcard .gi{margin-top:auto;padding-top:24px}
+.gcard .gi img{border-radius:14px 14px 0 0;border:1px solid rgba(255,255,255,.14);border-bottom:0;box-shadow:0 -20px 60px rgba(0,0,0,.45)}
+.g1{background:linear-gradient(160deg,#7f0df2,#3b0a8a 55%,#14082e)}
+.g2{background:linear-gradient(160deg,#4338ca,#1e1b6b 55%,#0b0f24)}
+.g3{background:linear-gradient(160deg,#6d28d9,#2e1065 55%,#0d0a1c)}
+/* Numbered sections */
+.numbered{position:relative;text-align:center;margin-top:110px}
+.numbered .n{font-size:clamp(90px,12vw,150px);font-weight:900;line-height:.8;background:linear-gradient(180deg,rgba(139,92,246,.35),rgba(139,92,246,0));-webkit-background-clip:text;background-clip:text;color:transparent}
+.numbered .eyebrow{display:block;margin-top:-26px;position:relative}
+.numbered h2{margin-top:10px}
+.numbered h2 em{font-style:normal}
+.numbered .lead{max-width:640px;margin:14px auto 0}
+.stage{margin:40px auto 0;max-width:1100px;border-radius:34px;padding:40px;background:radial-gradient(ellipse at 20% 0%,rgba(196,181,253,.25),transparent 50%),linear-gradient(150deg,#5b21b6,#7f0df2 40%,#1e1046);border:1px solid rgba(255,255,255,.12)}
+.stage .frame{padding:8px;background:rgba(2,4,8,.55)}
+/* Für wen */
+.who{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:46px}
+.whoc{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:24px;transition:.2s;scroll-margin-top:100px}
+.whoc:hover{border-color:rgba(139,92,246,.5)}
+.whoc h4{font-size:17px;font-weight:900;margin-top:14px}
+.whoc p{color:var(--muted);font-size:14px;margin-top:8px}
+.whoc ul{list-style:none;margin-top:14px;display:grid;gap:7px;font-size:13.5px;color:#cbd5e1}
+.whoc li:before{content:"→ ";color:var(--violet3)}
+/* Floating help */
+.helpfab{position:fixed;right:22px;bottom:22px;z-index:40;width:54px;height:54px;border-radius:18px;display:grid;place-items:center;background:linear-gradient(135deg,#7f0df2,#8b5cf6);color:#fff;box-shadow:0 14px 40px -8px rgba(127,13,242,.8)}
+.helpfab svg{width:24px;height:24px}
+/* Mobile menu groups */
+.mgroups{display:none}
+@media (max-width:1080px){.mega.products{grid-template-columns:1fr 1fr}.mega.products .mlist{grid-column:1/-1;grid-row:auto;grid-template-columns:1fr 1fr}}
+@media (max-width:960px){
+  .dd{display:none}
+  nav.top.open .links .mgroups{display:block}
+  .mgroups details{background:transparent;border:0;border-bottom:1px solid var(--line);border-radius:0;padding:0}
+  .mgroups summary{padding:15px 2px;font-size:16px;font-weight:600;color:#f1f5f9}
+  .mgroups details a{display:block;padding:10px 4px 10px 14px;border:0!important;font-size:15px!important;color:#cbd5e1!important}
+  .mgroups details a small{display:block;color:var(--dim);font-size:12.5px}
+  nav.top.open .links{max-height:calc(100vh - 64px);overflow-y:auto}
+  .hgrid{grid-template-columns:1fr;gap:34px}
+  .hero.v2{text-align:center}.hero.v2 p.lead{margin-left:auto;margin-right:auto}.hero.v2 .ctas,.everything .chips,.trust{justify-content:center}
+  .tpanel{grid-template-columns:1fr;padding:22px;gap:22px}
+  .agents{grid-auto-flow:column;grid-template-columns:none;grid-auto-columns:86%;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px}
+  .agent{scroll-snap-align:center}
+  .gcards,.who{grid-template-columns:1fr}
+  .gcard{min-height:0}
+  .stage{padding:16px;border-radius:24px}
+}
+@media (max-width:600px){.tab{padding:8px 12px;font-size:13px}.tabs{gap:6px}.tpanel .frame.pf{max-width:300px;margin:0 auto}.numbered{margin-top:80px}.helpfab{right:14px;bottom:14px;width:48px;height:48px}}
 </style>
 </head>
 <body>
@@ -200,12 +338,47 @@ nav.top.open .menu-btn i:nth-child(1){transform:translateY(6px) rotate(45deg)}na
   <div class="wrap">
     <a class="brand" href="#"><img src="assets/logo-mark.png" alt=""><span>QU<b>REXION</b></span></a>
     <div class="links">
-      <a href="#funktionen">Funktionen</a>
+      <div class="dd"><button type="button" aria-haspopup="true">Produkt</button>
+        <div class="mega products">
+          <a class="pcard" href="#t-berichte"><div class="ph"><img src="assets/v2/t-journal.jpg" alt=""></div><b>Journal &amp; Berichte</b><span>Jeder Trade automatisch erfasst und ausgewertet – 9 Berichte bis hin zu Disziplin gegen Emotion.</span></a>
+          <a class="pcard" href="#t-sync"><div class="ph"><img src="assets/v2/t-sync.jpg" alt=""></div><b>Börsen-Sync</b><span>Bitget, Bitunix, Binance, Bybit, OKX, Hyperliquid – oder per CSV. Nur mit Lese-Schlüsseln.</span></a>
+          <a class="pcard" href="#t-coach"><div class="ph"><img src="assets/v2/t-coach.jpg" alt=""></div><b>KI-Coach <span class="new">KI</span></b><span>Findet, wo du Geld verdienst und wo du es verlierst – und beantwortet Fragen zu deinen Trades.</span></a>
+          <a class="pcard" href="#t-warn"><div class="ph"><img src="assets/v2/t-warn.jpg" alt=""></div><b>Warnzentrale</b><span>Verlustserie, fehlender Stop-Loss, Tageslimit, Makro-Termine – gewarnt, bevor es teuer wird.</span></a>
+          <div class="mlist">
+            <a class="mitem" href="#t-review"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></i><div><b>Nachbereitung</b><span>20 Sekunden pro Trade: Setup, Plan, Gefühl, Lektion.</span></div></a>
+            <a class="mitem" href="#t-replay"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m10 8 6 4-6 4z"/></svg></i><div><b>Trade Replay</b><span>Jeden Trade Kerze für Kerze nachspielen.</span></div></a>
+            <a class="mitem" href="#t-warn"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></i><div><b>Pre-Trade-Check</b><span>Positionsgröße und Regeln prüfen, bevor du einsteigst.</span></div></a>
+            <a class="mitem" href="#s-2"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg></i><div><b>Szenario-Simulator</b><span>Was wäre, wenn du Verluste früher begrenzt hättest?</span></div></a>
+            <a class="mitem" href="#faq"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg></i><div><b>Steuer-Export</b><span>Alle Trades eines Jahres in USD und Euro.</span></div></a>
+            <a class="mitem" href="#wege"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="15" height="11" rx="2"/><rect x="15" y="9" width="7" height="12" rx="1.5"/><path d="M6 19h6"/></svg></i><div><b>Web-App &amp; Windows-App</b><span>Im Browser, am Handy und als Windows-App.</span></div></a>
+          </div>
+        </div>
+      </div>
+      <div class="dd rel"><button type="button" aria-haspopup="true">Für wen</button>
+        <div class="mega cols"><p class="mh">Nach Trader-Typ</p>
+          <a class="mitem" href="#fuer-einsteiger"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12"/><path d="M12 12C12 7 8 4 3 4c0 5 4 8 9 8z"/><path d="M12 12c0-4 3-7 8-7 0 4-3 7-8 7z"/></svg></i><div><b>Für Einsteiger</b><span>Teure Fehler erkennen und Disziplin vom ersten Tag an.</span></div></a>
+          <a class="mitem" href="#fuer-fortgeschrittene"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 7-8.5 8.5-5-5L2 17"/><path d="M16 7h6v6"/></svg></i><div><b>Für Fortgeschrittene</b><span>Muster finden, die dich Geld kosten – und abstellen.</span></div></a>
+          <a class="mitem" href="#fuer-profitable"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/></svg></i><div><b>Für profitable Trader</b><span>Deine Stärken schützen und gezielt ausbauen.</span></div></a>
+          <a class="mitem" href="#fuer-hebel"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9z"/></svg></i><div><b>Für Futures &amp; Hebel</b><span>Liquidationsabstand, Funding und Risiko live im Blick.</span></div></a>
+        </div>
+      </div>
       <a href="#boersen">Börsen</a>
-      <a href="#sicherheit">Sicherheit</a>
-      <a href="#so-gehts">So geht's</a>
       <a href="#preise">Preise</a>
-      <a href="#faq">FAQ</a>
+      <div class="dd rel"><button type="button" aria-haspopup="true">Ressourcen</button>
+        <div class="mega cols">
+          <a class="mitem" href="#faq"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3M12 17h.01"/></svg></i><div><b>Häufige Fragen</b><span>Antworten zu Börsen, Abo und Daten.</span></div></a>
+          <a class="mitem" href="kontakt.html"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></i><div><b>Hilfe &amp; Kontakt</b><span>Schreib uns – Antwort meist in 1–2 Werktagen.</span></div></a>
+          <a class="mitem" href="https://github.com/QurexionTracker/Qurexion/releases"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg></i><div><b>Versionen</b><span>Was ist neu in QUREXION?</span></div></a>
+          <a class="mitem" href="#sicherheit"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></i><div><b>Sicherheit &amp; Daten</b><span>Lese-Schlüssel, Verschlüsselung, Speicherort.</span></div></a>
+          <a class="mitem" href="#trailer"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m10 8 6 4-6 4z"/></svg></i><div><b>Trailer</b><span>QUREXION in 60 Sekunden.</span></div></a>
+          <a class="mitem" href="https://github.com/QurexionTracker/Qurexion/releases/latest/download/QUREXION-Setup.exe" data-download><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 21h16"/></svg></i><div><b>Windows-App laden</b><span>Windows 10 / 11 · 64 Bit</span></div></a>
+        </div>
+      </div>
+      <div class="mgroups">
+        <details><summary>Produkt</summary><a href="#t-berichte">Journal &amp; Berichte</a><a href="#t-sync">Börsen-Sync</a><a href="#t-coach">KI-Coach</a><a href="#t-warn">Warnzentrale &amp; Pre-Trade-Check</a><a href="#t-review">Nachbereitung</a><a href="#t-replay">Trade Replay</a><a href="#wege">Web-App &amp; Windows-App</a></details>
+        <details><summary>Für wen</summary><a href="#fuer-einsteiger">Für Einsteiger</a><a href="#fuer-fortgeschrittene">Für Fortgeschrittene</a><a href="#fuer-profitable">Für profitable Trader</a><a href="#fuer-hebel">Für Futures &amp; Hebel</a></details>
+        <details><summary>Ressourcen</summary><a href="#faq">Häufige Fragen</a><a href="kontakt.html">Hilfe &amp; Kontakt</a><a href="https://github.com/QurexionTracker/Qurexion/releases">Versionen</a><a href="#sicherheit">Sicherheit &amp; Daten</a><a href="#trailer">Trailer</a></details>
+      </div>
       <a class="m-only" href="https://app.qurexion.com">Anmelden</a>
     </div>
     <div class="nav-cta">
@@ -217,85 +390,89 @@ nav.top.open .menu-btn i:nth-child(1){transform:translateY(6px) rotate(45deg)}na
   </div>
 </nav>
 
-<header class="hero">
-  <div class="wrap">
-    <span class="pill"><i></i>14 Tage kostenlos testen · im Browser &amp; für Windows</span>
-    <h1>Das Krypto-Trading-Journal, <span class="grad">das mitdenkt.</span></h1>
-    <p class="lead">QUREXION holt deine Trades automatisch von der Börse, zeigt dir Risiko und Marktlage live – und findet heraus, wo du Geld verdienst und wo du es verlierst.</p>
-    <div class="ctas">
-      <a class="btn btn-primary" href="https://app.qurexion.com/#registrieren">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>14 Tage kostenlos testen</a>
-      <a class="btn btn-ghost" href="https://github.com/QurexionTracker/Qurexion/releases/latest/download/QUREXION-Setup.exe" data-download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 21h16"/></svg>Windows-App laden</a>
+<header class="hero v2">
+  <div class="wrap hgrid">
+    <div>
+      <span class="pill"><i></i>14 Tage kostenlos · im Browser &amp; für Windows</span>
+      <h1>Dein Krypto-Trading-Journal, <span class="grad">das mitdenkt.</span></h1>
+      <p class="lead">QUREXION holt deine Trades automatisch von der Börse, wertet jeden einzelnen aus und zeigt dir, wo du Geld verdienst – und wo du es verlierst.</p>
+      <div class="ctas">
+        <a class="btn btn-primary" href="https://app.qurexion.com/#registrieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>14 Tage kostenlos testen</a>
+        <a class="btn btn-ghost" href="https://github.com/QurexionTracker/Qurexion/releases/latest/download/QUREXION-Setup.exe" data-download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 21h16"/></svg>Windows-App laden</a>
+      </div>
+      <div class="trust"><span>Keine Zahlungsdaten nötig</span><span>Nur Lese-Schlüssel</span><span>Server in Frankfurt</span></div>
+      <div class="everything"><p>Alles an einem Ort · 9 Werkzeuge</p>
+        <div class="chips"><a class="chip" href="#t-sync">Börsen-Sync</a><a class="chip" href="#t-review">Nachbereitung</a><a class="chip" href="#t-replay">Trade Replay</a><a class="chip" href="#t-berichte">Berichte</a><a class="chip" href="#t-warn">Warnzentrale</a><a class="chip" href="#t-coach">KI-Coach</a><a class="chip" href="#t-warn">Pre-Trade-Check</a><a class="chip" href="#s-2">Szenario-Simulator</a><a class="chip" href="#faq">Steuer-Export</a></div>
+      </div>
     </div>
-    <p class="note">Keine Zahlungsdaten nötig · Läuft im Browser oder als Windows-App · Ein Konto für beides</p>
-    <div class="shot reveal"><div class="frame pf"><div class="bar"><i></i><i></i><i></i></div><picture><source media="(max-width:600px)" srcset="assets/m-overview.jpg"><img src="assets/shot-overview.jpg" alt="QUREXION Übersicht mit Kennzahlen, offenen Positionen und Risiko"></picture></div></div>
+    <div class="shot reveal"><div class="frame pf"><div class="bar"><i></i><i></i><i></i></div><div class="scrollshot"><picture><source media="(max-width:600px)" srcset="assets/m-overview-full.jpg"><img src="assets/overview-full.jpg" alt="QUREXION Übersicht mit allen Bereichen: Kennzahlen, Live-Markt, Makro-Termine, Positionen, Wochenrückblick, Auswertungen, Eigenkapital und Zeitachsen-Heatmap"></picture><span class="sshint">Komplette Übersicht · zum Anhalten zeigen</span></div></div></div>
   </div>
 </header>
 
-<section class="tools">
+<section class="block" id="funktionen" style="padding-top:60px">
   <div class="wrap">
-    <span class="eyebrow">8 Werkzeuge · eine App</span>
-    <div class="chips">
-      <a class="chip" href="#f-sync">Börsen-Sync</a><a class="chip" href="#f-review">Nachbereitung</a><a class="chip" href="#f-reports">Berichte</a><a class="chip" href="#f-warn">Warnzentrale</a>
-      <a class="chip" href="#ki">KI-Coach</a><a class="chip" href="#f-tax">Steuer-Export</a><a class="chip" href="#f-reports">Szenario-Simulator</a><a class="chip" href="#f-review">Wochenrückblick</a>
+    <div class="center"><span class="eyebrow">Alles an einem Ort</span><h2>Ein Journal, das die Arbeit für dich macht.</h2>
+      <p class="lead">Verbinde deine Börse einmal – ab dann landet jeder Trade mit Gebühren und Funding automatisch im Journal, und QUREXION macht daraus Antworten.</p></div>
+    <div class="tabs" role="tablist">
+      <button class="tab on" data-t="t-sync"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 1-15 6.7L3 16M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5M3 21v-5h5"/></svg> Börsen-Sync</button>
+      <button class="tab" data-t="t-review"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg> Nachbereitung</button>
+      <button class="tab" data-t="t-replay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m10 8 6 4-6 4z"/></svg> Trade Replay</button>
+      <button class="tab" data-t="t-berichte"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="5"/><rect x="12" y="8" width="3" height="9"/><rect x="17" y="5" width="3" height="12"/></svg> Berichte</button>
+      <button class="tab" data-t="t-warn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Warnzentrale</button>
+      <button class="tab" data-t="t-coach"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M19 17l.8 2.2L22 20l-2.2.8L19 23l-.8-2.2L16 20l2.2-.8z"/></svg> KI-Coach</button>
     </div>
-    <div class="stats">
-      <div class="stat reveal"><b>6</b><span>Börsen automatisch verbunden</span></div>
-      <div class="stat reveal"><b>9</b><span>Berichte – von Kennzahlen bis Risiko</span></div>
-      <div class="stat reveal"><b>5</b><span>Sprachen: DE, EN, FR, ES, IT</span></div>
-      <div class="stat reveal"><b>2</b><span>Wege: Web-App &amp; Windows-App</span></div>
-    </div>
-    <div class="exch" id="boersen">
-      <p>Funktioniert mit</p>
-      <div class="row"><span>Bitget</span><span>Bitunix</span><span>Binance</span><span>Bybit</span><span>OKX</span><span>Hyperliquid</span><span style="opacity:.45">+ CSV-Import</span></div>
-    </div>
+    <div class="tpanel on" id="t-sync"><div><span class="eyebrow">Börsen-Sync</span><h3>Jeder Trade landet von allein im Journal.</h3><p>Einmal verbinden – offene Positionen siehst du live, geschlossene Trades kommen automatisch mit Gebühren, Funding und Hebel.</p><ul class="checks"><li>6 Börsen per API, alle anderen per CSV-Import</li><li>Positionen alle 5 Sekunden, Abgleich jede Minute</li><li>Nur Lese-Schlüssel – QUREXION kann nicht handeln oder auszahlen</li></ul></div><div class="frame pf"><picture><source media="(max-width:600px)" srcset="assets/m-exchanges.jpg"><img src="assets/shot-exchanges.jpg" alt="Börsen-Sync mit Sync-Status und Ereignissen"></picture></div></div>
+    <div class="tpanel" id="t-review"><div><span class="eyebrow">Nachbereitung &amp; Wochenrückblick</span><h3>In 20 Sekunden pro Trade besser werden.</h3><p>Setup, Plan, Gefühl, Lektion – QUREXION fragt kurz nach und zeigt dir dazu, wie nah du am Bestkurs ausgestiegen bist.</p><ul class="checks"><li>Fokus-Modus: Frage für Frage, komplett per Tastatur</li><li>Wochenrückblick mit 3 Erkenntnissen aus deinen echten Trades</li><li>Wochenziele, die QUREXION automatisch prüft</li></ul></div><div class="frame pf"><picture><source media="(max-width:600px)" srcset="assets/m-review.jpg"><img src="assets/shot-review.jpg" alt="Nachbereitung eines Trades mit Kursverlauf und Fragen"></picture></div></div>
+    <div class="tpanel" id="t-replay"><div><span class="eyebrow">Trade-Log &amp; Trade Replay</span><h3>Jeden Trade wiederfinden und nachspielen.</h3><p>Filter nach Coin, Richtung, Ergebnis, Tag oder Gefühl – und spiel jeden Trade Kerze für Kerze mit Einstieg, Stop-Loss und Ausstieg im Chart nach.</p><ul class="checks"><li>Ergebnis nach Tags: welches Setup dir wirklich Geld bringt</li><li>Replay mit Ausstieg gegen den Bestkurs</li><li>Teilbare Karten deiner Trades – Beträge auf Wunsch ausgeblendet</li></ul></div><div class="frame pf"><img src="assets/v2/shot-log.jpg" alt="Trade-Log mit Ergebnis nach Tags"></div></div>
+    <div class="tpanel" id="t-berichte"><div><span class="eyebrow">Berichte</span><h3>Sieh, was dich wirklich Geld kostet.</h3><p>Ergebnisse nach Wochentag, Uhrzeit, Coin und Hebel. Disziplin gegen Emotion – in Dollar.</p><ul class="checks"><li>9 Berichte: Verlauf, Kennzahlen, Risiko, Emotionen, Playbook, Marktlage …</li><li>Szenario-Simulator mit deinen echten Trades</li><li>Wöchentlicher Bericht automatisch als druckfertige Datei</li></ul></div><div class="frame pf"><picture><source media="(max-width:600px)" srcset="assets/m-reports.jpg"><img src="assets/shot-reports.jpg" alt="Bericht Emotionen: Disziplin gegen Emotion in Dollar"></picture></div></div>
+    <div class="tpanel" id="t-warn"><div><span class="eyebrow">Warnzentrale &amp; Pre-Trade-Check</span><h3>Gewarnt, bevor es teuer wird.</h3><p>Wenn du in einem Trade bist und etwas Wichtiges passiert, meldet sich QUREXION – als Pop-up, Windows-Nachricht und Ton.</p><ul class="checks"><li>Verlustserie, fehlender Stop-Loss, Tageslimit, Revenge-Trade</li><li>US-Makro-Termine (Fed, CPI, Arbeitsmarkt) mit Vorlauf</li><li>Pre-Trade-Check: Positionsgröße aus deinem Risiko, bevor du einsteigst</li></ul></div><div class="frame pf"><picture><source media="(max-width:600px)" srcset="assets/m-warn.jpg"><img src="assets/shot-warn.jpg" alt="Warnzentrale mit Warnung zu einer Verlustserie"></picture></div></div>
+    <div class="tpanel" id="t-coach"><div><span class="eyebrow">KI-Coach</span><h3>Frag dein Journal einfach.</h3><p>„Wie laufen meine Short-Trades am Montag?“ – QUREXION sucht die passenden Trades, rechnet selbst und lässt die KI nur die Antwort formulieren.</p><ul class="checks"><li>Wo du Geld verlierst – und wo deine Stärke liegt</li><li>Nach Tageszeit, Coin, Hebel, Haltedauer und Verhalten</li><li>Nichts wird erfunden: Die KI bekommt nur berechnete Zahlen</li></ul></div><div class="frame pf"><img src="assets/v2/shot-coach.jpg" alt="KI-Coach mit Stärken und Schwächen"></div></div>
   </div>
 </section>
 
-<section class="block" id="funktionen">
+<section class="band" id="ki">
   <div class="wrap">
-    <div class="center"><span class="eyebrow">Alles an einem Ort</span><h2>Vom Trade zur Erkenntnis –<br>ohne Tabellen, ohne Abtippen.</h2>
-      <p class="lead">Verbinde deine Börse einmal. Ab dann landet jeder Trade mit Gebühren und Funding automatisch im Journal – und QUREXION macht daraus Antworten.</p></div>
-
-    <div class="feature" id="f-sync">
-      <div class="txt reveal"><span class="eyebrow">Börsen-Sync</span><h3>Deine Trades kommen von allein.</h3>
-        <p>Offene Positionen siehst du live, geschlossene landen automatisch im Journal – inklusive Gebühren, Funding und Hebel.</p>
-        <ul class="checks"><li>Live-PnL und Liquidationsabstand deiner offenen Positionen</li><li>Abgleich alle 60 Sekunden, Positionen alle 5 Sekunden</li><li>Nur Lese-Schlüssel – QUREXION kann nicht handeln oder auszahlen</li></ul></div>
-      <div class="media reveal"><div class="frame pf"><div class="bar"><i></i><i></i><i></i></div><picture><source media="(max-width:600px)" srcset="assets/m-exchanges.jpg"><img src="assets/shot-exchanges.jpg" alt="Börsen-Sync mit Sync-Status und Ereignissen"></picture></div></div>
+    <div class="center"><span class="eyebrow">KI-Coach &amp; Risiko-Wächter</span><h2>Drei Helfer, die mitdenken.</h2>
+      <p class="lead">Sie beobachten die Teile deines Tradings, die du im Eifer des Gefechts übersiehst: Gewohnheiten, Risiko und Gefühl.</p></div>
+    <div class="agents">
+      <div class="agent reveal"><div class="top"><span class="aic" style="background:linear-gradient(135deg,#0ea5e9,#2563eb)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M19 17l.8 2.2L22 20l-2.2.8L19 23l-.8-2.2L16 20l2.2-.8z"/></svg></span><span class="st">COACH</span></div><p class="k">KI-Coach</p><h4>Findet deine Muster.</h4><p class="d">Wertet deine Trades nach Tageszeit, Coin, Hebel und Tags aus und sagt dir, was dir Geld bringt.</p>
+        <div class="bubbles"><div class="bub" style="--c:#f43f5e">Tags „FOMO“: 17 Trades, 41 % Gewinnrate, −87 $ gesamt.</div><div class="bub" style="--c:#10b981">„Plan eingehalten“: 31 Trades, 61 % Gewinnrate, +493 $.</div><div class="bub me">Wie laufen meine Shorts am Montag?</div></div><p class="foot">AKTIV</p></div>
+      <div class="agent reveal"><div class="top"><span class="aic" style="background:linear-gradient(135deg,#7f0df2,#8b5cf6)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span><span class="st">RISIKO</span></div><p class="k">Risiko-Wächter</p><h4>Hält dich vom schlechten Trade ab.</h4><p class="d">Prüft Tageslimit, Anzahl Trades, Stop-Loss und Positionsgröße – live, während du handelst.</p>
+        <div class="bubbles"><div class="bub" style="--c:#f59e0b">3 Verluste in Folge – Pause einlegen, Setups prüfen.</div><div class="bub" style="--c:#f43f5e">Kein Stop-Loss: ETH Long, 5x. Liquidation bei 2.540.</div><div class="bub" style="--c:#10b981">Pre-Trade-Check: GO – alle wichtigen Regeln erfüllt.</div></div><p class="foot">AKTIV</p></div>
+      <div class="agent reveal"><div class="top"><span class="aic" style="background:linear-gradient(135deg,#ec4899,#a21caf)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8z"/></svg></span><span class="st">VERHALTEN</span></div><p class="k">Verhalten &amp; Gefühl</p><h4>Zeigt, was Emotionen kosten.</h4><p class="d">Verknüpft dein Gefühl beim Trade mit dem Ergebnis – und rechnet Disziplin gegen Emotion in Dollar.</p>
+        <div class="bubbles"><div class="bub" style="--c:#10b981">Diszipliniert: +492 $ · Emotional: −87 $.</div><div class="bub" style="--c:#f59e0b">Bei „Ungeduldig“ verlierst du im Schnitt 24 $ pro Trade.</div><div class="bub" style="--c:#8b5cf6">Wochenrückblick: 3 Erkenntnisse aus deinen Trades.</div></div><p class="foot">AKTIV</p></div>
     </div>
-
-    <div class="feature rev" id="f-review">
-      <div class="txt reveal"><span class="eyebrow">Nachbereitung & Wochenrückblick</span><h3>In 20 Sekunden pro Trade besser werden.</h3>
-        <p>Setup, Plan, Gefühl, Lektion – QUREXION fragt kurz nach und zeigt dir dazu automatisch, wie nah du am Bestkurs ausgestiegen bist.</p>
-        <ul class="checks"><li>Fokus-Modus: Frage für Frage, komplett per Tastatur</li><li>Wochenrückblick mit 3 Erkenntnissen aus deinen echten Trades</li><li>Wochenziele, die QUREXION automatisch prüft</li></ul></div>
-      <div class="media reveal"><div class="frame pf"><div class="bar"><i></i><i></i><i></i></div><picture><source media="(max-width:600px)" srcset="assets/m-review.jpg"><img src="assets/shot-review.jpg" alt="Nachbereitung eines Trades mit Kursverlauf und Fragen"></picture></div></div>
-    </div>
-
-    <div class="feature" id="f-reports">
-      <div class="txt reveal"><span class="eyebrow">Berichte</span><h3>Sieh, was dich wirklich Geld kostet.</h3>
-        <p>Ergebnisse nach Wochentag, Uhrzeit, Coin und Hebel. Disziplin gegen Emotion – in Dollar. Und was passiert wäre, wenn du deine Verluste früher begrenzt hättest.</p>
-        <ul class="checks"><li>9 Berichte: Trade-Verlauf, Kennzahlen, Risiko, Emotionen, Playbook, Marktlage …</li><li>Szenario-Simulator: deine echten Trades mit halbierten Verlusten durchgerechnet</li><li>Teilbare Karten deiner besten Trades – Beträge auf Wunsch ausgeblendet</li></ul></div>
-      <div class="media reveal"><div class="frame pf"><div class="bar"><i></i><i></i><i></i></div><picture><source media="(max-width:600px)" srcset="assets/m-reports.jpg"><img src="assets/shot-reports.jpg" alt="Bericht Emotionen: Disziplin gegen Emotion in Dollar"></picture></div></div>
-    </div>
-
-    <div class="feature rev" id="f-warn">
-      <div class="txt reveal"><span class="eyebrow">Warnzentrale</span><h3>Gewarnt, bevor es teuer wird.</h3>
-        <p>Wenn du in einem Trade bist und etwas Wichtiges passiert, meldet sich QUREXION – als Pop-up, Windows-Nachricht und Ton.</p>
-        <ul class="checks"><li>US-Makro-Termine (Fed, CPI, Arbeitsmarkt) mit Vorlauf</li><li>Schnelle Kursbewegungen, Liquidationswellen, extremes Funding</li><li>Deine eigenen Risiko-Regeln: Max. Trades, Revenge-Pause, Stop-Loss-Pflicht</li></ul></div>
-      <div class="media reveal"><div class="frame pf"><div class="bar"><i></i><i></i><i></i></div><picture><source media="(max-width:600px)" srcset="assets/m-warn.jpg"><img src="assets/shot-warn.jpg" alt="Warnzentrale mit aktuellen Warnungen zu offenen Trades"></picture></div></div>
-    </div>
+    <p class="ex">Beispiele aus einem Demo-Konto</p>
   </div>
 </section>
 
-<section class="block" id="ki" style="padding-top:20px">
+<section class="block">
   <div class="wrap">
-    <div class="center"><span class="eyebrow">KI-Coach</span><h2>Frag dein Journal einfach.</h2>
-      <p class="lead">„Wie laufen meine Short-Trades am Montag?“ – QUREXION sucht die passenden Trades, rechnet selbst und lässt die KI nur die Antwort formulieren. Nichts wird erfunden.</p></div>
-    <div class="cards">
-      <div class="card reveal"><span class="tag">Coach</span><span class="live">Aktiv</span><div class="ico" style="margin-top:18px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2zM9 21h6"/></svg></div><h4>Stärken & Schwächen</h4><p>Findet automatisch, wo du Geld verdienst und wo du es verlierst – nach Tageszeit, Coin, Hebel und Verhalten.</p></div>
-      <div class="card reveal"><span class="tag">Chat</span><span class="live">Aktiv</span><div class="ico" style="margin-top:18px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><h4>Frag dein Journal</h4><p>Fragen in normaler Sprache, Antworten mit echten Zahlen aus deinen Trades.</p></div>
-      <div class="card reveal"><span class="tag">Risiko</span><span class="live">Aktiv</span><div class="ico" style="margin-top:18px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h4>Pre-Trade-Check</h4><p>Positionsgröße aus deinem Risiko, deine Regeln und deine Bilanz in genau dieser Situation – bevor du einsteigst.</p></div>
+    <div class="center"><span class="eyebrow">Weniger Aufwand</span><h2>Erfassen, verbinden, auswerten.</h2></div>
+    <div class="gcards">
+      <div class="gcard g1 reveal"><h4>Automatisch erfassen</h4><p>Börsen-Sync, CSV-Import oder von Hand – jeder Trade landet sauber im Journal, Duplikate werden erkannt.</p><div class="gi"><img src="assets/v2/c-import.jpg" alt="Trades per CSV importieren"></div></div>
+      <div class="gcard g2 reveal" id="wege"><h4>Mehrere Konten &amp; Geräte</h4><p>Mehrere Börsen und Portfolios in einem Konto – im Browser, am Handy und in der Windows-App mit denselben Daten.</p><div class="gi"><img src="assets/v2/c-accounts.jpg" alt="Kontowert, Positionen und Börsen-Status"></div></div>
+      <div class="gcard g3 reveal"><h4>Automatische Statistiken</h4><p>Keine Tabellen, keine Formeln: Gewinnrate, Profit-Faktor, Drawdown und Ergebnis je Setup rechnet QUREXION selbst.</p><div class="gi"><img src="assets/v2/c-stats.jpg" alt="Ergebnis nach Tags"></div></div>
     </div>
+
+    <div class="numbered" id="s-2"><div class="n">2</div><span class="eyebrow">Auswertung</span><h2>Analysiere deine <em class="grad">Zahlen</em>.</h2><p class="lead">Nimm dir einen Moment und sieh, welche Fehler dich Geld kosten – und was passiert wäre, wenn du nach Plan gehandelt hättest.</p></div>
+    <div class="stage reveal"><div class="frame pf"><picture><source media="(max-width:600px)" srcset="assets/m-reports.jpg"><img src="assets/shot-reports.jpg" alt="Berichte"></picture></div></div>
+
+    <div class="numbered" id="s-3"><div class="n">3</div><span class="eyebrow">Erkenntnisse</span><h2>Gewinne echte <em class="grad">Einsichten</em>.</h2><p class="lead">Der KI-Coach zeigt dir deine größte Schwäche und deine größte Stärke – mit Zahlen aus deinen eigenen Trades.</p></div>
+    <div class="stage reveal"><div class="frame pf"><img src="assets/v2/shot-coach.jpg" alt="KI-Coach"></div></div>
+  </div>
+</section>
+
+<section class="block" id="fuer-wen" style="padding-top:30px">
+  <div class="wrap">
+    <div class="center"><span class="eyebrow">Für wen</span><h2>Passt zu jedem Trader.</h2><p class="lead">Egal, ob du gerade anfängst oder schon profitabel bist – QUREXION zeigt dir den nächsten Schritt.</p></div>
+    <div class="who">
+      <div class="whoc reveal" id="fuer-einsteiger"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12"/><path d="M12 12C12 7 8 4 3 4c0 5 4 8 9 8z"/><path d="M12 12c0-4 3-7 8-7 0 4-3 7-8 7z"/></svg></div><h4>Für Einsteiger</h4><p>Teure Fehler früh erkennen, statt sie monatelang zu wiederholen.</p><ul><li>Geführter Start mit Portfolio</li><li>Risiko-Regeln von Anfang an</li><li>Nachbereitung in 20 Sekunden</li></ul></div>
+      <div class="whoc reveal" id="fuer-fortgeschrittene"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 7-8.5 8.5-5-5L2 17"/><path d="M16 7h6v6"/></svg></div><h4>Für Fortgeschrittene</h4><p>Finde die Muster, die dich Geld kosten – und stell sie ab.</p><ul><li>Ergebnis nach Setup &amp; Tags</li><li>KI-Coach mit Stärken &amp; Schwächen</li><li>Wochenziele mit Prüfung</li></ul></div>
+      <div class="whoc reveal" id="fuer-profitable"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/></svg></div><h4>Für profitable Trader</h4><p>Schütze deine Stärken und bau gezielt aus, was funktioniert.</p><ul><li>Playbook-Auswertung</li><li>Szenario-Simulator</li><li>Steuer-Export in USD &amp; Euro</li></ul></div>
+      <div class="whoc reveal" id="fuer-hebel"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9z"/></svg></div><h4>Für Futures &amp; Hebel</h4><p>Liquidation, Funding und Risiko live im Blick – auch wenn es schnell geht.</p><ul><li>Liquidationsabstand live</li><li>Warnung ohne Stop-Loss</li><li>Funding &amp; Liquidationswellen</li></ul></div>
+    </div>
+    <div class="exch" id="boersen" style="text-align:center"><p>Funktioniert mit</p><div class="row"><span>Bitget</span><span>Bitunix</span><span>Binance</span><span>Bybit</span><span>OKX</span><span>Hyperliquid</span><span style="opacity:.45">+ CSV-Import</span></div></div>
   </div>
 </section>
 
@@ -307,17 +484,6 @@ nav.top.open .menu-btn i:nth-child(1){transform:translateY(6px) rotate(45deg)}na
         <p class="lead" style="color:#cbd5e1">Du entscheidest: In der Windows-App bleiben Trades und Schlüssel auf deinem PC. In der Web-App liegen sie verschlüsselt in deinem Konto auf Servern in Frankfurt. Kein Verkauf von Daten.</p>
         <ul class="checks"><li>API-Schlüssel verschlüsselt gespeichert – nur Lese-Rechte empfohlen</li><li>QUREXION kann keine Orders senden und nichts auszahlen</li><li>Signierte Updates – nur offizielle Versionen werden installiert</li><li>Die KI bekommt nur berechnete Kennzahlen – oder du nutzt die lokale KI, dann verlässt nichts den PC</li></ul>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="block" id="so-gehts" style="padding-top:20px">
-  <div class="wrap">
-    <div class="center"><span class="eyebrow">In 3 Minuten startklar</span><h2>So einfach geht's.</h2></div>
-    <div class="steps">
-      <div class="step reveal"><div class="in"><span class="num">SCHRITT 1</span><h4>Konto & Installation</h4><p>Kostenloses Konto anlegen, Setup herunterladen und starten. Der Assistent führt dich durch Sprache und Einrichtung.</p><p class="hint">Zeigt Windows „Der Computer wurde durch Windows geschützt“? Klicke auf <b>Weitere Informationen</b> und dann auf <b>Trotzdem ausführen</b>. <a href="#smartscreen">Warum?</a></p></div></div>
-      <div class="step reveal"><div class="in"><span class="num">SCHRITT 2</span><h4>Börse verbinden</h4><p>Lese-Schlüssel deiner Börse eintragen – mit Schritt-für-Schritt-Anleitung im Assistenten.</p></div></div>
-      <div class="step reveal"><div class="in"><span class="num">SCHRITT 3</span><h4>Erkenntnisse bekommen</h4><p>QUREXION lädt deine Trades und zeigt dir sofort deine stärksten und schwächsten Muster.</p></div></div>
     </div>
   </div>
 </section>
@@ -377,16 +543,24 @@ nav.top.open .menu-btn i:nth-child(1){transform:translateY(6px) rotate(45deg)}na
   <div class="wrap">
     <div class="fgrid">
       <div><a class="brand" href="#"><img src="assets/logo-mark.png" alt=""><span>QU<b>REXION</b></span></a><p style="margin-top:14px;max-width:360px">Das Krypto-Trading-Journal für Trader, die verstehen wollen, warum sie gewinnen – und warum nicht.</p></div>
-      <div><h5>Produkt</h5><ul><li><a href="#funktionen">Funktionen</a></li><li><a href="#boersen">Börsen</a></li><li><a href="#sicherheit">Sicherheit</a></li><li><a href="https://github.com/QurexionTracker/Qurexion/releases" >Versionen</a></li></ul></div>
+      <div><h5>Produkt</h5><ul><li><a href="#funktionen">Funktionen</a></li><li><a href="#fuer-wen">Für wen</a></li><li><a href="#boersen">Börsen</a></li><li><a href="#sicherheit">Sicherheit</a></li><li><a href="https://github.com/QurexionTracker/Qurexion/releases" >Versionen</a></li></ul></div>
       <div><h5>Rechtliches</h5><ul><li><a href="kontakt.html">Kontakt</a></li><li><a href="impressum.html">Impressum</a></li><li><a href="datenschutz.html">Datenschutz</a></li><li><a href="agb.html">Nutzungsbedingungen</a></li></ul></div>
     </div>
     <p class="disc">Risikohinweis: Der Handel mit Kryptowerten und Derivaten mit Hebel ist mit erheblichen Risiken verbunden und kann zum vollständigen Verlust des eingesetzten Kapitals führen. QUREXION ist ein Werkzeug zur Auswertung deiner eigenen Trades und stellt keine Anlage-, Finanz- oder Steuerberatung dar. Vergangene Ergebnisse sind kein Hinweis auf zukünftige Ergebnisse.<br><br>© 2026 QUREXION</p>
   </div>
 </footer>
-
+<a class="helpfab" href="kontakt.html" aria-label="Hilfe & Kontakt" title="Hilfe & Kontakt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></a>
 <script>
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+// Tabs
+function qxTab(id){var p=document.getElementById(id);if(!p||!p.classList.contains('tpanel'))return false;document.querySelectorAll('.tpanel').forEach(x=>x.classList.toggle('on',x===p));document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('on',t.dataset.t===id));return true}
+document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>qxTab(t.dataset.t)));
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href^="#t-"]');if(a){var id=a.getAttribute('href').slice(1);if(qxTab(id)){e.preventDefault();document.querySelectorAll('.dd.open').forEach(d=>d.classList.remove('open'));document.querySelector('.tabs').scrollIntoView({behavior:'smooth',block:'start'})}}});
+// Menü per Klick (Touch) und Schließen außerhalb
+document.querySelectorAll('.dd>button').forEach(b=>b.addEventListener('click',e=>{var d=b.parentElement;var o=!d.classList.contains('open');document.querySelectorAll('.dd.open').forEach(x=>x.classList.remove('open'));d.classList.toggle('open',o)}));
+document.addEventListener('click',e=>{if(!e.target.closest('.dd'))document.querySelectorAll('.dd.open').forEach(x=>x.classList.remove('open'))});
+document.querySelectorAll('.mega a').forEach(a=>a.addEventListener('click',()=>document.querySelectorAll('.dd.open').forEach(x=>x.classList.remove('open'))));
 </script>
 <script>/*qxMenuClose*/document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("nav.top .links a");if(a){var n=document.querySelector("nav.top");n.classList.remove("open");var b=n.querySelector(".menu-btn");b&&b.setAttribute("aria-expanded","false")}});</script>
 <script src="/assets/qx-track.js" defer></script>
