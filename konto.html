@@ -2,6 +2,9 @@
 <html lang="de">
 <head>
 <meta charset="utf-8">
+<!--qx-sec--><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; media-src 'self'; font-src 'self' data:; connect-src 'self' https://saqrxqanucedbwpsvhxl.supabase.co wss://saqrxqanucedbwpsvhxl.supabase.co; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests"><meta name="referrer" content="strict-origin-when-cross-origin"><script>if(window.top!==window.self){try{window.top.location.href=location.href}catch(e){}document.documentElement.style.display="none"}</script><!--qx-sec-->
+
+
 <meta name="robots" content="noindex">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Konto – QUREXION</title>
@@ -316,7 +319,8 @@ footer a:hover{color:#fff}
     if(/invalid login credentials|invalid_credentials/i.test(s))return 'E-Mail oder Passwort ist falsch.';
     if(/email not confirmed|email_not_confirmed/i.test(s))return 'Bitte bestätige zuerst deine E-Mail-Adresse (Link in der E-Mail).';
     if(/already registered|user_already_exists/i.test(s))return 'Für diese E-Mail gibt es schon ein Konto – bitte anmelden.';
-    if(/weak_password|password should|at least/i.test(s))return 'Das Passwort ist zu schwach – mindestens 8 Zeichen, am besten mit Zahl.';
+  function qxPwOk(p){return p.length>=10&&/[A-Za-zÄÖÜäöüß]/.test(p)&&/\d/.test(p);}
+    if(/weak_password|password should|at least/i.test(s))return 'Das Passwort ist zu schwach – mindestens 10 Zeichen mit Buchstaben und Zahlen.';
     if(/rate limit|too many|429/i.test(s))return 'Zu viele Versuche – bitte einen Moment warten.';
     if(/same_password|should be different/i.test(s))return 'Das neue Passwort muss sich vom alten unterscheiden.';
     if(/expired|otp_expired|invalid.*link|access_denied/i.test(s))return 'Der Link ist abgelaufen oder wurde schon benutzt. Bitte fordere einen neuen an.';
@@ -341,7 +345,7 @@ footer a:hover{color:#fff}
   $('bShow').onclick=function(){var i=$('iPw');i.type=i.type==='password'?'text':'password';this.textContent=i.type==='password'?'Zeigen':'Verbergen'};
   $('fAuth').onsubmit=async function(e){e.preventDefault();var mail=$('iMail').value.trim(),pw=$('iPw').value;msg('aMsg');
     if(!validMail(mail))return msg('aMsg','err','Bitte eine gültige E-Mail-Adresse eingeben.');
-    if(mode==='signup'&&pw.length<8)return msg('aMsg','err','Das Passwort ist zu schwach – mindestens 8 Zeichen, am besten mit Zahl.');
+    if(mode==='signup'&&!qxPwOk(pw))return msg('aMsg','err','Das Passwort ist zu schwach – mindestens 10 Zeichen mit Buchstaben und Zahlen.');
     if(mode==='signup'&&!$('iTerms').checked)return msg('aMsg','err','Bitte bestätige die Nutzungsbedingungen und die Datenschutzerklärung.');
     var b=$('bAuth');b.disabled=true;
     try{
@@ -355,7 +359,7 @@ footer a:hover{color:#fff}
     var r=await sb.auth.resetPasswordForEmail(mail,{redirectTo:HERE});if(r.error)return msg('fMsg','err',err(r.error));
     $('sTitle').textContent='E-Mail ist unterwegs';$('sText').textContent='Wir haben dir einen Link an '+mail+' geschickt. Öffne ihn auf einem beliebigen Gerät und lege ein neues Passwort fest.';show('vSent')};
   $('fReset').onsubmit=async function(e){e.preventDefault();var a=$('iNew').value,b=$('iNew2').value;
-    if(a.length<8)return msg('rMsg','err','Das Passwort ist zu schwach – mindestens 8 Zeichen, am besten mit Zahl.');if(a!==b)return msg('rMsg','err','Die Passwörter stimmen nicht überein.');
+    if(!qxPwOk(a))return msg('rMsg','err','Das Passwort ist zu schwach – mindestens 10 Zeichen mit Buchstaben und Zahlen.');if(a!==b)return msg('rMsg','err','Die Passwörter stimmen nicht überein.');
     var r=await sb.auth.updateUser({password:a});if(r.error)return msg('rMsg','err',err(r.error));
     recovery=false;history.replaceState(null,'',HERE);route();msg('dMsg','ok','Dein neues Passwort ist gespeichert. Melde dich damit auch in der App an.')};
   // Kundenkonto
@@ -376,7 +380,7 @@ footer a:hover{color:#fff}
   $('bBuy').onclick=async function(){var b=this;b.disabled=true;msg('dMsg');try{location.href=await invoke('create-checkout',{plan:plan})}catch(x){msg('dMsg','err',x.message);b.disabled=false}};
   $('bPortal').onclick=async function(){try{location.href=await invoke('billing-portal')}catch(x){msg('dMsg','err',x.message)}};
   $('bOut').onclick=async function(){await sb.auth.signOut({scope:'local'});session=null;location.hash='anmelden';route()};
-  $('fPw').onsubmit=async function(e){e.preventDefault();var p=$('iPwNew').value;if(p.length<8)return msg('pMsg','err','Mindestens 8 Zeichen.');var r=await sb.auth.updateUser({password:p});if(r.error)return msg('pMsg','err',err(r.error));$('iPwNew').value='';msg('pMsg','ok','Neues Passwort gespeichert.')};
+  $('fPw').onsubmit=async function(e){e.preventDefault();var p=$('iPwNew').value;if(!qxPwOk(p))return msg('pMsg','err','Das Passwort ist zu schwach – mindestens 10 Zeichen mit Buchstaben und Zahlen.');var r=await sb.auth.updateUser({password:p});if(r.error)return msg('pMsg','err',err(r.error));$('iPwNew').value='';msg('pMsg','ok','Neues Passwort gespeichert.')};
   $('iDel').oninput=function(){$('bDel').disabled=this.value.trim().toLowerCase()!==(session&&session.user.email||'').toLowerCase()};
   $('bDel').onclick=async function(){this.disabled=true;try{await invoke('delete-account').catch(function(e){if(!/url/i.test(e.message))throw e});await sb.auth.signOut({scope:'local'});session=null;show('vAuth');setMode('signin');msg('aMsg','ok','Dein Konto wurde gelöscht.')}catch(x){msg('xMsg','err',x.message);this.disabled=false}};
   // Fehler aus Links (abgelaufen usw.)
