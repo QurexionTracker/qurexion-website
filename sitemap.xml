@@ -5,6 +5,8 @@
   <url><loc>https://qurexion.com/datenschutz.html</loc><priority>0.2</priority></url>
   <url><loc>https://qurexion.com/agb.html</loc></url>
   <url><loc>https://qurexion.com/kontakt.html</loc></url>
+  <url><loc>https://qurexion.com/versionen.html</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://qurexion.com/en/</loc></url>
+  <url><loc>https://qurexion.com/en/changelog.html</loc><changefreq>weekly</changefreq></url>
   <url><loc>https://qurexion.com/en/contact.html</loc></url>
 </urlset>
