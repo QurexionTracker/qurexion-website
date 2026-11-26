@@ -5,11 +5,13 @@
 <!--qx-sec--><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; media-src 'self'; font-src 'self' data:; connect-src 'self' https://saqrxqanucedbwpsvhxl.supabase.co wss://saqrxqanucedbwpsvhxl.supabase.co; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests"><meta name="referrer" content="strict-origin-when-cross-origin"><script>if(window.top!==window.self){try{window.top.location.href=location.href}catch(e){}document.documentElement.style.display="none"}</script><!--qx-sec-->
 
 
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>QUREXION – Das Krypto-Trading-Journal, das mitdenkt</title>
 <meta name="description" content="QUREXION holt deine Trades automatisch von der Börse, zeigt dir Risiko und Marktlage live und findet, wo du Geld verdienst und wo du es verlierst. Im Browser und für Windows – 14 Tage kostenlos testen.">
 <meta property="og:title" content="QUREXION – Krypto-Trading-Journal">
 <meta property="og:description" content="Automatisches Trading-Journal für Krypto-Trader: Auto-Sync, Nachbereitung, Berichte, Warnzentrale, KI-Coach. Im Browser und für Windows.">
+<meta property="og:locale" content="de_DE">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://qurexion.com/">
 <meta property="og:image" content="https://qurexion.com/assets/og.jpg">
@@ -22,6 +24,9 @@
 <link rel="canonical" href="https://qurexion.com/">
 <link rel="alternate" hreflang="de" href="https://qurexion.com/">
 <link rel="alternate" hreflang="en" href="https://qurexion.com/en/">
+<link rel="alternate" hreflang="fr" href="https://qurexion.com/fr/">
+<link rel="alternate" hreflang="es" href="https://qurexion.com/es/">
+<link rel="alternate" hreflang="it" href="https://qurexion.com/it/">
 <link rel="alternate" hreflang="x-default" href="https://qurexion.com/">
 <link rel="icon" href="assets/logo-mark.png">
 <style>
@@ -153,6 +158,10 @@ footer a:hover{color:#fff}
 .plan .ps{color:var(--dim);font-size:13px;margin-top:4px}
 .plan .badge{position:absolute;top:-12px;right:20px;background:var(--green);color:#02140d;font-size:12px;font-weight:900;padding:4px 12px;border-radius:999px}
 .plancheck{grid-template-columns:repeat(3,auto);justify-content:center;gap:12px 28px;margin-top:30px}
+.plans.p3{grid-template-columns:repeat(3,minmax(0,320px))}
+.plan ul{list-style:none;margin-top:20px;display:grid;gap:10px}.plan li{font-size:14px;color:#cbd5e1;display:flex;gap:9px;line-height:1.4}.plan li:before{content:"✓";color:var(--green);font-weight:900}.plan li.no{color:#64748b}.plan li.no:before{content:"–";color:#475569}
+.plan .pbtn{display:block;text-align:center;margin-top:24px;padding:12px;border-radius:12px;font-weight:800;font-size:14px;border:1px solid var(--line);color:#fff}.plan .pbtn:hover{border-color:rgba(139,92,246,.7)}.plan.best .pbtn{background:linear-gradient(135deg,#7f0df2,#6d28d9);border-color:transparent}
+@media (max-width:1000px){.plans.p3{grid-template-columns:minmax(0,420px)}}
 @media (max-width:760px){.plans{grid-template-columns:1fr}.plancheck{grid-template-columns:1fr}}
 /* Responsive */
 @media (max-width:960px){
@@ -194,7 +203,7 @@ nav.top.open .menu-btn i:nth-child(1){transform:translateY(6px) rotate(45deg)}na
   .frame.pf .bar{display:none}
   .frame.pf img{border-radius:22px}
 }
-@media (max-width:370px){ .nav-cta .lang-sw{display:none} }
+@media (max-width:370px){ .nav-cta .lang-dd{display:none} }
 
 /* Hero (v1.35): komplette Übersicht, scrollt langsam durch alle Bereiche */
 .scrollshot{position:relative;border-radius:12px;overflow:hidden;aspect-ratio:1600/1082}
@@ -333,7 +342,7 @@ nav.top .wrap{position:relative}
   .stage{padding:16px;border-radius:24px}
 }
 @media (max-width:600px){.tab{padding:8px 12px;font-size:13px}.tabs{gap:6px}.tpanel .frame.pf{max-width:300px;margin:0 auto}.numbered{margin-top:80px}.helpfab{right:14px;bottom:14px;width:48px;height:48px}}
-</style>
+.lang-dd{position:relative;display:inline-flex}.lang-dd .lang-sw{gap:5px;background:none;cursor:pointer;font-family:inherit}.lang-menu{position:absolute;top:calc(100% + 8px);right:0;min-width:170px;background:#0b0f1a;border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:6px;box-shadow:0 20px 50px -20px rgba(0,0,0,.9);display:none;z-index:80}.lang-dd:hover .lang-menu,.lang-dd:focus-within .lang-menu{display:block}.lang-dd::after{content:"";position:absolute;left:0;right:0;top:100%;height:10px}.lang-menu a{display:flex;gap:10px;align-items:center;padding:8px 10px;border-radius:9px;color:#cbd5e1;font-size:14px;text-decoration:none}.lang-menu a b{width:24px;font-size:11px;letter-spacing:.06em;color:#94a3b8}.lang-menu a:hover{background:rgba(139,92,246,.12);color:#fff}.lang-menu a[aria-current]{color:#fff}.lang-menu a[aria-current] b{color:#c4b5fd}</style>
 </head>
 <body>
 
@@ -344,7 +353,7 @@ nav.top .wrap{position:relative}
       <div class="dd"><button type="button" aria-haspopup="true">Produkt</button>
         <div class="mega products">
           <a class="pcard" href="#t-berichte"><div class="ph"><img src="assets/v2/t-journal.jpg" alt=""></div><b>Journal &amp; Berichte</b><span>Jeder Trade automatisch erfasst und ausgewertet – 9 Berichte bis hin zu Disziplin gegen Emotion.</span></a>
-          <a class="pcard" href="#t-sync"><div class="ph"><img src="assets/v2/t-sync.jpg" alt=""></div><b>Börsen-Sync</b><span>Bitget, Bitunix, Binance, Bybit, OKX, Hyperliquid – oder per CSV. Nur mit Lese-Schlüsseln.</span></a>
+          <a class="pcard" href="#t-sync"><div class="ph"><img src="assets/v2/t-sync.jpg" alt=""></div><b>Börsen-Sync</b><span>Bitget, Bitunix, Binance, Bybit, OKX, Hyperliquid, MEXC, KuCoin, Coinbase, Kraken – oder per CSV. Nur mit Lese-Schlüsseln.</span></a>
           <a class="pcard" href="#t-coach"><div class="ph"><img src="assets/v2/t-coach.jpg" alt=""></div><b>KI-Coach <span class="new">KI</span></b><span>Findet, wo du Geld verdienst und wo du es verlierst – und beantwortet Fragen zu deinen Trades.</span></a>
           <a class="pcard" href="#t-warn"><div class="ph"><img src="assets/v2/t-warn.jpg" alt=""></div><b>Warnzentrale</b><span>Verlustserie, fehlender Stop-Loss, Tageslimit, Makro-Termine – gewarnt, bevor es teuer wird.</span></a>
           <div class="mlist">
@@ -371,6 +380,7 @@ nav.top .wrap{position:relative}
         <div class="mega cols">
           <a class="mitem" href="#faq"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3M12 17h.01"/></svg></i><div><b>Häufige Fragen</b><span>Antworten zu Börsen, Abo und Daten.</span></div></a>
           <a class="mitem" href="kontakt.html"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></i><div><b>Hilfe &amp; Kontakt</b><span>Schreib uns – Antwort meist in 1–2 Werktagen.</span></div></a>
+          <a class="mitem" href="ueber-uns.html"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></i><div><b>Über uns</b><span>Wer QUREXION baut und wofür wir stehen.</span></div></a>
           <a class="mitem" href="versionen.html"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg></i><div><b>Versionen</b><span>Was ist neu in QUREXION?</span></div></a>
           <a class="mitem" href="#sicherheit"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></i><div><b>Sicherheit &amp; Daten</b><span>Lese-Schlüssel, Verschlüsselung, Speicherort.</span></div></a>
           <a class="mitem" href="#trailer"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m10 8 6 4-6 4z"/></svg></i><div><b>Trailer</b><span>QUREXION in 60 Sekunden.</span></div></a>
@@ -380,12 +390,12 @@ nav.top .wrap{position:relative}
       <div class="mgroups">
         <details><summary>Produkt</summary><a href="#t-berichte">Journal &amp; Berichte</a><a href="#t-sync">Börsen-Sync</a><a href="#t-coach">KI-Coach</a><a href="#t-warn">Warnzentrale &amp; Pre-Trade-Check</a><a href="#t-review">Nachbereitung</a><a href="#t-replay">Trade Replay</a><a href="#wege">Web-App &amp; Windows-App</a></details>
         <details><summary>Für wen</summary><a href="#fuer-einsteiger">Für Einsteiger</a><a href="#fuer-fortgeschrittene">Für Fortgeschrittene</a><a href="#fuer-profitable">Für profitable Trader</a><a href="#fuer-hebel">Für Futures &amp; Hebel</a></details>
-        <details><summary>Ressourcen</summary><a href="#faq">Häufige Fragen</a><a href="kontakt.html">Hilfe &amp; Kontakt</a><a href="versionen.html">Versionen</a><a href="#sicherheit">Sicherheit &amp; Daten</a><a href="#trailer">Trailer</a></details>
+        <details><summary>Ressourcen</summary><a href="#faq">Häufige Fragen</a><a href="kontakt.html">Hilfe &amp; Kontakt</a><a href="versionen.html">Versionen</a><a href="#sicherheit">Sicherheit &amp; Daten</a><a href="#trailer">Trailer</a><a href="ueber-uns.html">Über uns</a></details>
       </div>
       <a class="m-only" href="https://app.qurexion.com">Anmelden</a>
     </div>
     <div class="nav-cta">
-      <a class="lang-sw" href="en/" hreflang="en" title="English">EN</a>
+      <div class="lang-dd"><button class="lang-sw" type="button" aria-haspopup="true" aria-label="Language">DE<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button><div class="lang-menu"><a href="" hreflang="de" lang="de" aria-current="true"><b>DE</b>Deutsch</a><a href="en/" hreflang="en" lang="en"><b>EN</b>English</a><a href="fr/" hreflang="fr" lang="fr"><b>FR</b>Français</a><a href="es/" hreflang="es" lang="es"><b>ES</b>Español</a><a href="it/" hreflang="it" lang="it"><b>IT</b>Italiano</a></div></div>
       <a class="btn btn-ghost" href="https://app.qurexion.com">Anmelden</a>
       <a class="btn btn-primary" href="https://app.qurexion.com/#registrieren">Kostenlos testen</a>
       <button class="menu-btn" type="button" aria-label="Menü" aria-expanded="false" onclick="var n=this.closest('nav');var o=n.classList.toggle('open');this.setAttribute('aria-expanded',o)"><i></i><i></i><i></i></button>
@@ -424,7 +434,7 @@ nav.top .wrap{position:relative}
       <button class="tab" data-t="t-warn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Warnzentrale</button>
       <button class="tab" data-t="t-coach"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M19 17l.8 2.2L22 20l-2.2.8L19 23l-.8-2.2L16 20l2.2-.8z"/></svg> KI-Coach</button>
     </div>
-    <div class="tpanel on" id="t-sync"><div><span class="eyebrow">Börsen-Sync</span><h3>Jeder Trade landet von allein im Journal.</h3><p>Einmal verbinden – offene Positionen siehst du live, geschlossene Trades kommen automatisch mit Gebühren, Funding und Hebel.</p><ul class="checks"><li>6 Börsen per API, alle anderen per CSV-Import</li><li>Positionen alle 5 Sekunden, Abgleich jede Minute</li><li>Nur Lese-Schlüssel – QUREXION kann nicht handeln oder auszahlen</li></ul></div><div class="frame pf"><picture><source media="(max-width:600px)" srcset="assets/m-exchanges.jpg"><img src="assets/shot-exchanges.jpg" alt="Börsen-Sync mit Sync-Status und Ereignissen"></picture></div></div>
+    <div class="tpanel on" id="t-sync"><div><span class="eyebrow">Börsen-Sync</span><h3>Jeder Trade landet von allein im Journal.</h3><p>Einmal verbinden – offene Positionen siehst du live, geschlossene Trades kommen automatisch mit Gebühren, Funding und Hebel.</p><ul class="checks"><li>10 Börsen per API, alle anderen per CSV-Import</li><li>Positionen alle 5 Sekunden, Abgleich jede Minute</li><li>Nur Lese-Schlüssel – QUREXION kann nicht handeln oder auszahlen</li></ul></div><div class="frame pf"><picture><source media="(max-width:600px)" srcset="assets/m-exchanges.jpg"><img src="assets/shot-exchanges.jpg" alt="Börsen-Sync mit Sync-Status und Ereignissen"></picture></div></div>
     <div class="tpanel" id="t-review"><div><span class="eyebrow">Nachbereitung &amp; Wochenrückblick</span><h3>In 20 Sekunden pro Trade besser werden.</h3><p>Setup, Plan, Gefühl, Lektion – QUREXION fragt kurz nach und zeigt dir dazu, wie nah du am Bestkurs ausgestiegen bist.</p><ul class="checks"><li>Fokus-Modus: Frage für Frage, komplett per Tastatur</li><li>Wochenrückblick mit 3 Erkenntnissen aus deinen echten Trades</li><li>Wochenziele, die QUREXION automatisch prüft</li></ul></div><div class="frame pf"><picture><source media="(max-width:600px)" srcset="assets/m-review.jpg"><img src="assets/shot-review.jpg" alt="Nachbereitung eines Trades mit Kursverlauf und Fragen"></picture></div></div>
     <div class="tpanel" id="t-replay"><div><span class="eyebrow">Trade-Log &amp; Trade Replay</span><h3>Jeden Trade wiederfinden und nachspielen.</h3><p>Filter nach Coin, Richtung, Ergebnis, Tag oder Gefühl – und spiel jeden Trade Kerze für Kerze mit Einstieg, Stop-Loss und Ausstieg im Chart nach.</p><ul class="checks"><li>Ergebnis nach Tags: welches Setup dir wirklich Geld bringt</li><li>Replay mit Ausstieg gegen den Bestkurs</li><li>Teilbare Karten deiner Trades – Beträge auf Wunsch ausgeblendet</li></ul></div><div class="frame pf"><img src="assets/v2/shot-log.jpg" alt="Trade-Log mit Ergebnis nach Tags"></div></div>
     <div class="tpanel" id="t-berichte"><div><span class="eyebrow">Berichte</span><h3>Sieh, was dich wirklich Geld kostet.</h3><p>Ergebnisse nach Wochentag, Uhrzeit, Coin und Hebel. Disziplin gegen Emotion – in Dollar.</p><ul class="checks"><li>9 Berichte: Verlauf, Kennzahlen, Risiko, Emotionen, Playbook, Marktlage …</li><li>Szenario-Simulator mit deinen echten Trades</li><li>Wöchentlicher Bericht automatisch als druckfertige Datei</li></ul></div><div class="frame pf"><picture><source media="(max-width:600px)" srcset="assets/m-reports.jpg"><img src="assets/shot-reports.jpg" alt="Bericht Emotionen: Disziplin gegen Emotion in Dollar"></picture></div></div>
@@ -475,7 +485,7 @@ nav.top .wrap{position:relative}
       <div class="whoc reveal" id="fuer-profitable"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/></svg></div><h4>Für profitable Trader</h4><p>Schütze deine Stärken und bau gezielt aus, was funktioniert.</p><ul><li>Playbook-Auswertung</li><li>Szenario-Simulator</li><li>Steuer-Export in USD &amp; Euro</li></ul></div>
       <div class="whoc reveal" id="fuer-hebel"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9z"/></svg></div><h4>Für Futures &amp; Hebel</h4><p>Liquidation, Funding und Risiko live im Blick – auch wenn es schnell geht.</p><ul><li>Liquidationsabstand live</li><li>Warnung ohne Stop-Loss</li><li>Funding &amp; Liquidationswellen</li></ul></div>
     </div>
-    <div class="exch" id="boersen" style="text-align:center"><p>Funktioniert mit</p><div class="row"><span>Bitget</span><span>Bitunix</span><span>Binance</span><span>Bybit</span><span>OKX</span><span>Hyperliquid</span><span style="opacity:.45">+ CSV-Import</span></div></div>
+    <div class="exch" id="boersen" style="text-align:center"><p>Funktioniert mit</p><div class="row"><span>Bitget</span><span>Bitunix</span><span>Binance</span><span>Bybit</span><span>OKX</span><span>Hyperliquid</span><span>MEXC</span><span>KuCoin</span><span>Coinbase</span><span>Kraken</span><span style="opacity:.45">+ CSV-Import</span></div></div>
   </div>
 </section>
 
@@ -501,18 +511,14 @@ nav.top .wrap{position:relative}
 <section class="block" id="preise" style="padding-top:20px">
   <div class="wrap center">
     <span class="eyebrow">Preise</span>
-    <h2 style="margin-top:12px">Ein Abo. Alle Funktionen.</h2>
-    <p class="lead">14 Tage kostenlos testen – ohne Zahlungsdaten. Danach monatlich oder jährlich, jederzeit kündbar.</p>
-    <div class="plans">
-      <div class="plan reveal"><p class="pn">Monatlich</p><p class="pp"><b>14,99 €</b> / Monat</p><p class="ps">monatlich kündbar</p></div>
-      <div class="plan best reveal"><span class="badge">33 % sparen</span><p class="pn">Jährlich</p><p class="pp"><b>119 €</b> / Jahr</p><p class="ps">entspricht 9,92 € im Monat</p></div>
+    <h2 style="margin-top:12px">Starte kostenlos. Upgrade, wenn du willst.</h2>
+    <p class="lead">Dauerhaft gratis für Einsteiger – alle Funktionen 14 Tage zum Testen, ohne Zahlungsdaten.</p>
+    <div class="plans p3">
+      <div class="plan reveal"><p class="pn">Gratis</p><p class="pp"><b>0 €</b> / für immer</p><p class="ps">Keine Zahlungsdaten nötig</p><ul><li>1 Börse oder CSV-Import</li><li>30 Trades pro Monat</li><li>Journal, Trade-Log &amp; Basis-Berichte</li><li>Warnung ohne Stop-Loss</li><li class="no">KI-Coach</li><li class="no">Steuer-Export</li></ul><a class="pbtn" href="https://app.qurexion.com/#registrieren">Kostenlos starten</a></div>
+      <div class="plan reveal"><p class="pn">Monatlich</p><p class="pp"><b>14,99 €</b> / Monat</p><p class="ps">monatlich kündbar</p><ul><li>10 Börsen gleichzeitig</li><li>Unbegrenzte Trades</li><li>Alle 9 Berichte &amp; Szenario-Simulator</li><li>Warnzentrale &amp; Risiko-Regeln</li><li>KI-Coach &amp; Journal-Chat</li><li>Steuer-Export &amp; Backups</li></ul><a class="pbtn" href="https://app.qurexion.com/#registrieren">14 Tage testen</a></div>
+      <div class="plan best reveal"><span class="badge">33 % sparen</span><p class="pn">Jährlich</p><p class="pp"><b>119 €</b> / Jahr</p><p class="ps">entspricht 9,92 € im Monat</p><ul><li>10 Börsen gleichzeitig</li><li>Unbegrenzte Trades</li><li>Alle 9 Berichte &amp; Szenario-Simulator</li><li>Warnzentrale &amp; Risiko-Regeln</li><li>KI-Coach &amp; Journal-Chat</li><li>Steuer-Export &amp; Backups</li></ul><a class="pbtn" href="https://app.qurexion.com/#registrieren">14 Tage testen</a></div>
     </div>
-    <ul class="checks plancheck">
-      <li>Automatischer Börsen-Sync (6 Börsen)</li><li>Nachbereitung &amp; Wochenrückblick</li><li>Alle 9 Berichte &amp; Szenario-Simulator</li>
-      <li>Warnzentrale &amp; Risiko-Regeln</li><li>KI-Coach &amp; Journal-Chat</li><li>Steuer-Export &amp; automatische Backups</li>
-    </ul>
-    <div class="ctas" style="display:flex;justify-content:center;margin-top:30px"><a class="btn btn-primary" href="https://app.qurexion.com/#registrieren">14 Tage kostenlos testen</a></div>
-    <p style="color:var(--dim);font-size:13px;margin-top:14px">Preise inkl. MwSt. · Bezahlung sicher über Stripe (Karte, Apple Pay, Google Pay)</p>
+    <p style="color:var(--dim);font-size:13px;margin-top:22px">Preise inkl. MwSt. · Bezahlung sicher über Stripe (Karte, Apple Pay, Google Pay) · Nach dem Test läuft dein Konto automatisch gratis weiter, wenn du kein Abo abschließt.</p>
   </div>
 </section>
 
@@ -521,13 +527,13 @@ nav.top .wrap{position:relative}
     <div class="center"><span class="eyebrow">FAQ</span><h2>Häufige Fragen</h2></div>
     <div class="faq">
       <details><summary>Was ist ein Trading-Journal – und warum brauche ich eins?</summary><p>Ein Journal hält jeden Trade mit Ergebnis, Setup und Gedanken fest. Erst damit siehst du, welche Muster dir Geld bringen und welche dich Geld kosten. QUREXION erledigt das Eintragen für dich automatisch.</p></details>
-      <details><summary>Welche Börsen werden unterstützt?</summary><p>Bitget, Bitunix, Binance, Bybit, OKX und Hyperliquid per API. Andere Börsen kannst du per CSV-Import anbinden.</p></details>
+      <details><summary>Welche Börsen werden unterstützt?</summary><p>Bitget, Bitunix, Binance, Bybit, OKX, Hyperliquid, MEXC und KuCoin (Futures) sowie Coinbase und Kraken (Spot) per API. Andere Börsen kannst du per CSV-Import anbinden.</p></details>
       <details><summary>Kann QUREXION in meinem Namen handeln?</summary><p>Nein. Du verbindest deine Börse mit einem Lese-Schlüssel. Damit kann QUREXION nur Trades und Positionen lesen – keine Orders senden und nichts auszahlen.</p></details>
       <details><summary>Wo werden meine Daten gespeichert?</summary><p>In der Windows-App auf deinem PC – optional mit Cloud-Sync in dein Konto. In der Web-App in deinem Konto (Supabase, Frankfurt); Börsen-Schlüssel werden dort verschlüsselt gespeichert und nur an die Börse weitergegeben. Für Kurse und Marktdaten ruft QUREXION öffentliche Börsen-Schnittstellen ab. Für Antworten des KI-Coachs schickt QUREXION nur die berechneten Kennzahlen zu deiner Frage an die QUREXION-KI – wer das nicht möchte, schaltet in den Einstellungen auf die lokale KI um.</p></details>
       <details id="smartscreen"><summary>Windows warnt beim Installieren – ist das normal?</summary><p>Ja. Windows SmartScreen warnt bei neuen Programmen, die noch nicht oft heruntergeladen wurden oder kein teures Herausgeber-Zertifikat haben. So startest du das Setup trotzdem:</p><ol class="ol"><li>Im blauen Fenster „Der Computer wurde durch Windows geschützt“ auf <b>Weitere Informationen</b> klicken.</li><li>Unten auf <b>Trotzdem ausführen</b> klicken.</li><li>Das Setup startet ganz normal.</li></ol><p>Lade QUREXION nur über diese Seite herunter. Updates kommen danach automatisch und sind digital signiert – QUREXION installiert nur offizielle Versionen.</p></details>
       <details><summary>Läuft QUREXION auf Mac oder dem Handy?</summary><p>Ja – über die Web-App unter app.qurexion.com läuft QUREXION in jedem modernen Browser, also auch auf Mac, Tablet und Handy. Auf dem Handy kannst du die Web-App zum Startbildschirm hinzufügen. Die Desktop-App gibt es für Windows.</p></details>
       <details id="f-tax"><summary>Hilft QUREXION bei der Steuer?</summary><p>QUREXION exportiert alle geschlossenen Trades eines Jahres in USD und Euro (EZB-Referenzkurs am Schließtag) als Tabelle und Bericht. Das ist keine Steuerberatung – sprich die Auswertung mit deinem Steuerberater ab.</p></details>
-      <details><summary>Was kostet QUREXION?</summary><p>Du testest QUREXION 14 Tage kostenlos – ohne Zahlungsdaten. Danach kostet QUREXION Pro 14,99 € im Monat oder 119 € im Jahr (inkl. MwSt.). Das Abo ist jederzeit zum Ende des Zeitraums kündbar.</p></details>
+      <details><summary>Was kostet QUREXION?</summary><p>QUREXION hat einen dauerhaften Gratis-Tarif: 1 Börse oder CSV-Import, 30 Trades pro Monat, Journal und Basis-Berichte. Alle Funktionen testest du 14 Tage kostenlos – ohne Zahlungsdaten. QUREXION Pro kostet 14,99 € im Monat oder 119 € im Jahr (inkl. MwSt.) und ist jederzeit zum Ende des Zeitraums kündbar.</p></details>
       <details><summary>Wofür brauche ich ein Konto?</summary><p>Mit deinem Konto meldest du dich in der Web-App und in der Windows-App an, und es prüft, ob deine Testphase oder dein Abo aktiv ist. Die Windows-App läuft ohne Internet bis zu 7 Tage weiter.</p></details>
       <details><summary>Gibt es QUREXION auch im Browser?</summary><p>Ja – unter app.qurexion.com, mit allen Funktionen: Börsen-Sync, Nachbereitung, Berichte, Warnungen und KI-Coach. Mit Cloud-Sync siehst du in Browser und Windows-App dieselben Daten.</p></details>
     </div>
@@ -547,7 +553,7 @@ nav.top .wrap{position:relative}
     <div class="fgrid">
       <div><a class="brand" href="#"><img src="assets/logo-mark.png" alt=""><span>QU<b>REXION</b></span></a><p style="margin-top:14px;max-width:360px">Das Krypto-Trading-Journal für Trader, die verstehen wollen, warum sie gewinnen – und warum nicht.</p></div>
       <div><h5>Produkt</h5><ul><li><a href="#funktionen">Funktionen</a></li><li><a href="#fuer-wen">Für wen</a></li><li><a href="#boersen">Börsen</a></li><li><a href="#sicherheit">Sicherheit</a></li><li><a href="versionen.html" >Versionen</a></li></ul></div>
-      <div><h5>Rechtliches</h5><ul><li><a href="kontakt.html">Kontakt</a></li><li><a href="impressum.html">Impressum</a></li><li><a href="datenschutz.html">Datenschutz</a></li><li><a href="agb.html">Nutzungsbedingungen</a></li></ul></div>
+      <div><h5>Rechtliches</h5><ul><li><a href="ueber-uns.html">Über uns</a></li><li><a href="kontakt.html">Kontakt</a></li><li><a href="impressum.html">Impressum</a></li><li><a href="datenschutz.html">Datenschutz</a></li><li><a href="agb.html">Nutzungsbedingungen</a></li></ul></div>
     </div>
     <p class="disc">Risikohinweis: Der Handel mit Kryptowerten und Derivaten mit Hebel ist mit erheblichen Risiken verbunden und kann zum vollständigen Verlust des eingesetzten Kapitals führen. QUREXION ist ein Werkzeug zur Auswertung deiner eigenen Trades und stellt keine Anlage-, Finanz- oder Steuerberatung dar. Vergangene Ergebnisse sind kein Hinweis auf zukünftige Ergebnisse.<br><br>© 2026 QUREXION</p>
   </div>
